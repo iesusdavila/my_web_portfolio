@@ -1,0 +1,141 @@
+{
+    "personal": {
+        "name": "Iesus Davila",
+        "title": "Robotics & AI Engineer",
+        "bio": "Ingeniero especializado en robótica e inteligencia artificial con una sólida formación académica y experiencia en investigación. Apasionado por el desarrollo de soluciones innovadoras que combinen robótica avanzada con inteligencia artificial.",
+        "email": "tu@email.com",
+        "location": "Ciudad de México",
+        "social": {
+            "github": "https://github.com/yourusername",
+            "linkedin": "https://linkedin.com/in/yourusername",
+            "twitter": "https://twitter.com/yourusername"
+        }
+    },
+    "projects": {
+        "featured": [
+            {
+                "title": "Robot Autónomo de Exploración",
+                "description": "Desarrollo de un robot autónomo capaz de mapear y navegar en entornos desconocidos utilizando SLAM y Deep Learning",
+                "image": "path/to/robot-image.jpg",
+                "links": {
+                    "github": "https://github.com/yourusername/robot-explorer",
+                    "demo": "https://youtube.com/watch?v=demo"
+                },
+                "technologies": ["ROS", "Python", "TensorFlow", "OpenCV"]
+            },
+            {
+                "title": "Sistema de Visión por Computadora",
+                "description": "Implementación de un sistema de detección y seguimiento de objetos en tiempo real",
+                "image": "path/to/vision-image.jpg",
+                "links": {
+                    "github": "https://github.com/yourusername/computer-vision"
+                },
+                "technologies": ["Python", "OpenCV", "YOLO", "PyTorch"]
+            }
+        ],
+        "all": [
+            {
+                "title": "Brazo Robótico con RL",
+                "description": "Control de un brazo robótico utilizando aprendizaje por refuerzo",
+                "links": {
+                    "github": "https://github.com/yourusername/robotic-arm-rl"
+                }
+            }
+        ]
+    },
+    "research": {
+        "featured": [
+            {
+                "title": "Deep Learning en Robots Colaborativos",
+                "journal": "IEEE Robotics and Automation Letters",
+                "year": "2023",
+                "description": "Investigación sobre la implementación de redes neuronales profundas en robots colaborativos",
+                "links": {
+                    "ieee": "https://ieeexplore.ieee.org/document/example",
+                    "pdf": "path/to/paper.pdf"
+                }
+            }
+        ],
+        "all": [
+            {
+                "title": "Análisis Comparativo de Algoritmos SLAM",
+                "journal": "International Journal of Robotics Research",
+                "year": "2022",
+                "links": {
+                    "ieee": "https://ieeexplore.ieee.org/document/example2"
+                }
+            }
+        ]
+    },
+    "cv": {
+        "education": [
+            {
+                "degree": "Doctorado en Robótica",
+                "institution": "Universidad Example",
+                "year": "2023",
+                "description": "Investigación en robótica cognitiva y aprendizaje profundo"
+            },
+            {
+                "degree": "Maestría en Inteligencia Artificial",
+                "institution": "Tech University",
+                "year": "2020",
+                "description": "Especialización en visión por computadora y aprendizaje por refuerzo"
+            }
+        ],
+        "experience": [
+            {
+                "position": "Investigador Senior en Robótica",
+                "company": "Instituto de Robótica Avanzada",
+                "period": "2020-Presente",
+                "description": "Desarrollo de algoritmos de IA para sistemas robóticos autónomos"
+            },
+            {
+                "position": "Ingeniero de IA",
+                "company": "Tech Solutions Inc.",
+                "period": "2018-2020",
+                "description": "Implementación de soluciones de visión por computadora y deep learning"
+            }
+        ],
+        "skills": [
+            "Robótica",
+            "Inteligencia Artificial",
+            "ROS",
+            "Python",
+            "Deep Learning",
+            "Computer Vision",
+            "SLAM"
+        ],
+        "pdfUrl": "path/to/cv.pdf"
+    },
+    "awards": {
+        "featured": [
+            {
+                "title": "Premio a la Innovación en Robótica",
+                "organization": "IEEE Robotics Society",
+                "year": "2023",
+                "description": "Reconocimiento por contribuciones innovadoras en robótica cognitiva"
+            }
+        ],
+        "prizes": [
+            {
+                "title": "Mejor Paper en Conferencia Internacional",
+                "organization": "International Conference on Robotics",
+                "year": "2022"
+            }
+        ],
+        "certifications": [
+            {
+                "name": "TensorFlow Developer Certificate",
+                "issuer": "Google",
+                "date": "2023",
+                "link": "credential-url"
+            },
+            {
+                "name": "ROS Developer Certificate",
+                "issuer": "Robot Operating System",
+                "date": "2022",
+                "link": "credential-url"
+            }
+        ]
+    }
+}

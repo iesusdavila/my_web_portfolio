@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iesus Davila | Robotics & AI Engineer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="dark-theme">
+    <nav class="nav">
+        <div class="nav__logo">ID</div>
+        <ul class="nav__links">
+            <li><a href="#home" class="nav__link">Home</a></li>
+            <li><a href="#projects" class="nav__link">Proyectos</a></li>
+            <li><a href="#research" class="nav__link">Investigaciones</a></li>
+            <li><a href="#cv" class="nav__link">CV</a></li>
+            <li><a href="#awards" class="nav__link">Premios</a></li>
+            <li><a href="#contact" class="nav__link">Contacto</a></li>
+            <li>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="material-icons">dark_mode</i>
+                </button>
+            </li>
+        </ul>
+        <div class="nav__hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="active">
+            <canvas id="particles"></canvas>
+            <div class="hero__content">
+                <h1 class="hero__title">Iesus Davila</h1>
+                <h2 class="hero__subtitle">Robotics & AI Engineer</h2>
+                <div class="hero__bio">
+                    <p>Ingeniero especializado en robótica e inteligencia artificial con una sólida formación académica y experiencia en investigación. Apasionado por el desarrollo de soluciones innovadoras que combinen robótica avanzada con inteligencia artificial.</p>
+                    <p>Mi enfoque se centra en el desarrollo de sistemas robóticos autónomos y la implementación de algoritmos de aprendizaje profundo para mejorar la interacción humano-robot. Actualmente trabajo en proyectos que buscan expandir las capacidades de los robots en entornos dinámicos y no estructurados.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlights-grid">
+                <h3>Destacados</h3>
+                <div class="grid__container">
+                    <div id="featured-projects"></div>
+                    <div id="featured-research"></div>
+                    <div id="featured-awards"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section__title">Proyectos</h2>
+            <div class="projects__grid"></div>
+        </section>
+
+        <section id="research">
+            <h2 class="section__title">Investigaciones</h2>
+            <div class="research__grid"></div>
+        </section>
+
+        <section id="cv">
+            <h2 class="section__title">Curriculum Vitae</h2>
+            <div class="cv__content"></div>
+            <button class="btn btn--primary" id="downloadCV">
+                <i class="fas fa-download"></i> Descargar CV
+            </button>
+        </section>
+
+        <section id="awards">
+            <h2 class="section__title">Premios y Certificaciones</h2>
+            <div class="awards__container">
+                <div class="awards__prizes"></div>
+                <div class="awards__certifications"></div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section__title">Contacto</h2>
+            <form class="contact__form">
+                <div class="form__group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form__group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form__group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/main.js" type="module"></script>
+    <script src="js/particles.js" type="module"></script>
+    <script src="js/animations.js" type="module"></script>
+</body>
+</html>
