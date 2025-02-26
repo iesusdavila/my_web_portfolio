@@ -87,7 +87,7 @@ function renderFeaturedProjects(projects) {
     const showViewAllButton = projects.featured.length > 4 || (projects.all && projects.all.length > 0);
 
     container.innerHTML = `
-        <h4>Proyectos Destacados</h4>
+        <h3 style="margin-bottom: 1rem;">Best Projects</h3>
         <div class="grid">
             ${featuredProjects.map(project => `
                 <div class="card">
@@ -126,7 +126,7 @@ function renderFeaturedResearch(research) {
     const showViewAllButton = research.featured.length > 4 || (research.all && research.all.length > 0);
 
     container.innerHTML = `
-        <h4>Investigaciones Destacadas</h4>
+        <h3 style="margin-bottom: 1rem;">Best Research</h3>
         <div class="grid">
             ${featuredResearch.map(paper => `
                 <div class="card">
@@ -254,7 +254,7 @@ function renderFeaturedAwards(awards) {
                             (awards.certifications && awards.certifications.length > 0);
 
     container.innerHTML = `
-        <h4>Reconocimientos Destacados</h4>
+        <h3 style="margin-bottom: 1rem;">Awards</h3>
         <div class="grid">
             ${featuredAwards.map(award => `
                 <div class="card">
