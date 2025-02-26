@@ -126,7 +126,7 @@ function renderFeaturedResearch(research) {
     const showViewAllButton = research.featured.length > 4 || (research.all && research.all.length > 0);
 
     container.innerHTML = `
-        <h3 style="margin-bottom: 1rem;">Best Research</h3>
+        <h3 style="margin-bottom: 1rem;">Best Papers</h3>
         <div class="grid">
             ${featuredResearch.map(paper => `
                 <div class="card">
@@ -140,9 +140,9 @@ function renderFeaturedResearch(research) {
                                     <i class="fas fa-book"></i> IEEE
                                 </a>
                             ` : ''}
-                            ${paper.links.pdf ? `
-                                <a href="${paper.links.pdf}" target="_blank" class="btn btn--secondary">
-                                    <i class="fas fa-file-pdf"></i> PDF
+                            ${paper.links.github ? `
+                                <a href="${paper.links.github}" target="_blank" class="btn btn--secondary">
+                                    <i class="fab fa-github"></i> GitHub
                                 </a>
                             ` : ''}
                         </div>
@@ -151,7 +151,7 @@ function renderFeaturedResearch(research) {
             `).join('')}
         </div>
         ${showViewAllButton ? `
-            <a href="#research" class="btn btn--primary view-all-btn">Ver todas las investigaciones</a>
+            <a href="#research" class="btn btn--primary view-all-btn">See all papers</a>
         ` : ''}
     `;
 }
@@ -201,9 +201,9 @@ function renderAllResearch(research) {
                             <i class="fas fa-book"></i> IEEE
                         </a>
                     ` : ''}
-                    ${paper.links.pdf ? `
-                        <a href="${paper.links.pdf}" target="_blank" class="btn btn--secondary">
-                            <i class="fas fa-file-pdf"></i> PDF
+                    ${paper.links.github ? `
+                        <a href="${paper.links.github}" target="_blank" class="btn btn--secondary">
+                            <i class="fab fa-github"></i> GitHub
                         </a>
                     ` : ''}
                 </div>

@@ -46,13 +46,14 @@
     "research": {
         "featured": [
             {
-                "title": "Deep Learning en Robots Colaborativos",
-                "journal": "IEEE Robotics and Automation Letters",
-                "year": "2023",
-                "description": "Investigación sobre la implementación de redes neuronales profundas en robots colaborativos",
+                "title": "Software Architecture and Simulation Interface for Autonomous Underwater Vehicles",
+                "journal": "IEEE Robotics and Automation Systems",
+                "year": "2024",
+                "description": "This project focuses on the development of a submersible UAV, using advanced technologies in robotics, automatic control and computer vision. Developed with ROS2 Humble, Gazebo Garden 7 and Rviz2, this project represents a pioneering effort in the simulation and operation of underwater autonomous vehicles.",
+                "image": "images/research/auv_max.png",
                 "links": {
-                    "ieee": "https://ieeexplore.ieee.org/document/example",
-                    "pdf": "path/to/paper.pdf"
+                    "ieee": "https://ieeexplore.ieee.org/document/10746001",
+                    "github": "https://github.com/RAMEL-ESPOL/UnderwaterVehicleSimulator"
                 }
             }
         ],
