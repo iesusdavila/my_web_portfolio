@@ -189,7 +189,6 @@ section.active {
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 70px);
-    margin-top: 70px;
 }
 
 .hero__title {
@@ -376,6 +375,13 @@ section.active {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
+}
+
+.cv__buttons{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .cv__section {
