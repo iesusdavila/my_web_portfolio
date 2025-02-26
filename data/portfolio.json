@@ -12,33 +12,54 @@
         }
     },
     "projects": {
-        "featured": [
+        "featured": [  
             {
-                "title": "Robot Autónomo de Exploración",
-                "description": "Desarrollo de un robot autónomo capaz de mapear y navegar en entornos desconocidos utilizando SLAM y Deep Learning",
-                "image": "path/to/robot-image.jpg",
+                "title": "Software Architecture Master-Slave",
+                "description": "Based on the use of UGVs and ROS2 Humble, applying software architecture techniques and robust design patterns. The results confirmed that, under the master-slave structure, the system completes all assigned tasks, even in case of failure of one or more robots.",
+                "image": "images/projects/master_slave.png",
                 "links": {
-                    "github": "https://github.com/yourusername/robot-explorer",
-                    "demo": "https://youtube.com/watch?v=demo"
+                    "github": "https://github.com/iesusdavila/master_slave_mrs",
+                    "demo": "https://youtu.be/fS6GwS7P4-A" 
                 },
-                "technologies": ["ROS", "Python", "TensorFlow", "OpenCV"]
+                "technologies": ["ROS2 Humble", "Python", "Nav2", "Gazebo"]
             },
             {
-                "title": "Sistema de Visión por Computadora",
-                "description": "Implementación de un sistema de detección y seguimiento de objetos en tiempo real",
-                "image": "path/to/vision-image.jpg",
+                "title": "Multi Robot System",
+                "description": "Multi Robot System developed for ROS2 Humble, allows the easy incorporation of several robot models with little configuration. There is no limit on the number of robots, if you incorporate UGV you can provide your parameter file for autonomous navigation.",
+                "image": "images/projects/multi_robot.png",
                 "links": {
-                    "github": "https://github.com/yourusername/computer-vision"
+                    "github": "https://github.com/yourusername/robot-explorer",
+                    "demo": "https://youtu.be/fS6GwS7P4-A" 
                 },
-                "technologies": ["Python", "OpenCV", "YOLO", "PyTorch"]
+                "technologies": ["ROS2 Humble", "Python", "Nav2", "Gazebo"]
+            },
+            {
+                "title": "AUV Max: Simulator for Autonomous Underwater Vehicles",
+                "description": "It focuses on the development of a submersible UAV, using advanced technologies in robotics, automatic control and machine vision. Developed with ROS2 Humble, Gazebo Garden 7 and Rviz2, this project represents a pioneering effort in the simulation and operation of autonomous underwater vehicles.",
+                "image": "images/research/auv_max.png",
+                "links": {
+                    "github": "https://github.com/RAMEL-ESPOL/UnderwaterVehicleSimulator"
+                },
+                "technologies": ["ROS2 Humble", "OpenCV", "C++", "Tkinter"]
             }
         ],
         "all": [
             {
-                "title": "Brazo Robótico con RL",
-                "description": "Control de un brazo robótico utilizando aprendizaje por refuerzo",
+                "title": "Follower Car",
+                "description": "Follower algorithm for TurtleBot3 and ROVER using only 2D LIDAR and traditional control techniques. The algorithm can be run on N robots, achieving a chain of follower robots. No machine vision or anything similar is used in the algorithm.",
+                "image": "images/projects/follower_robot.png",
                 "links": {
-                    "github": "https://github.com/yourusername/robotic-arm-rl"
+                    "github": "https://github.com/iesusdavila/follower_car/tree/humble-devel",
+                    "demo": "https://youtu.be/71NROFKV50Q"
+                }
+            },
+            {
+                "title": "KUKA Kr210 - Pick and Place",
+                "description": "It uses ROS Noetic and MoveIt for motion planning and OpenCV for real-time object detection based on color segmentation. The system ensures accurate trajectory execution and seamless communication between perception and control, enabling efficient and autonomous pick and place operations.",
+                "image": "images/projects/pick_place.png",
+                "links": {
+                    "github": "https://github.com/iesusdavila/kuka_kr210-pick-place/tree/main",
+                    "demo": "https://youtu.be/OrNDWy7UmwY"
                 }
             }
         ]
@@ -49,7 +70,7 @@
                 "title": "Software Architecture and Simulation Interface for Autonomous Underwater Vehicles",
                 "journal": "IEEE Robotics and Automation Systems",
                 "year": "2024",
-                "description": "This project focuses on the development of a submersible UAV, using advanced technologies in robotics, automatic control and computer vision. Developed with ROS2 Humble, Gazebo Garden 7 and Rviz2, this project represents a pioneering effort in the simulation and operation of underwater autonomous vehicles.",
+                "description": "It focuses on the development of a submersible UAV, using advanced technologies in robotics, automatic control and machine vision. Developed with ROS2 Humble, Gazebo Garden 7 and Rviz2, this project represents a pioneering effort in the simulation and operation of autonomous underwater vehicles.",
                 "image": "images/research/auv_max.png",
                 "links": {
                     "ieee": "https://ieeexplore.ieee.org/document/10746001",
