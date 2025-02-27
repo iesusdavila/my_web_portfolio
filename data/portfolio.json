@@ -9,7 +9,49 @@
             "github": "https://github.com/yourusername",
             "linkedin": "https://linkedin.com/in/yourusername",
             "twitter": "https://twitter.com/yourusername"
-        }
+        },
+        "technologies": [
+            {
+                "name": "ROS/ROS2",
+                "image": "images/tech/ros.svg"
+            },
+            {
+                "name": "Python",
+                "image": "images/tech/python.png"
+            },
+            {
+                "name": "TensorFlow",
+                "image": "images/tech/tensorflow.png"
+            },
+            {
+                "name": "PyTorch",
+                "image": "images/tech/pytorch.png"
+            },
+            {
+                "name": "Nav2",
+                "image": "images/tech/nav.png"
+            },
+            {
+                "name": "MoveIt",
+                "image": "images/tech/moveit.png"
+            },
+            {
+                "name": "Linux",
+                "image": "images/tech/linux.png"
+            },
+            {
+                "name": "Docker",
+                "image": "images/tech/docker.png"
+            },
+            {
+                "name": "C++",
+                "image": "images/tech/cplusplus.png"
+            },
+            {
+                "name": "OpenCV",
+                "image": "images/tech/opencv.png"
+            }
+        ]
     },
     "projects": {
         "featured": [  

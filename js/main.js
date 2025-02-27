@@ -78,6 +78,23 @@ function initNavigation() {
     });
 }
 
+function renderTechStack(technologies) {
+    const container = document.getElementById('tech-stack');
+    if (!container || !technologies) return;
+
+    container.innerHTML = `
+        <h2 class="section__title" style="margin-bottom: 3rem;">Main Technologies</h2>
+        <div class="tech-grid">
+            ${technologies.map(tech => `
+                <div class="tech-item">
+                    <img src="${tech.image}" alt="${tech.name}" class="tech-logo">
+                    <span class="tech-name">${tech.name}</span>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
 // Renderizar proyectos destacados
 function renderFeaturedProjects(projects) {
     const container = document.getElementById('featured-projects');
@@ -317,6 +334,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Cargar y renderizar datos
     const portfolioData = await loadPortfolioData();
     if (portfolioData) {
+        renderTechStack(portfolioData.personal.technologies);
+
         // Renderizar secciones destacadas
         renderFeaturedProjects(portfolioData.projects);
         renderFeaturedResearch(portfolioData.research);
