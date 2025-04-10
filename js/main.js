@@ -129,7 +129,7 @@ function renderFeaturedProjects(projects) {
             `).join('')}
         </div>
         ${showViewAllButton ? `
-            <a href="#projects" class="btn btn--primary view-all-btn">Ver todos los proyectos</a>
+            <a href="#projects" class="btn btn--primary view-all-btn">See all projects</a>
         ` : ''}
     `;
 }
@@ -143,7 +143,7 @@ function renderFeaturedResearch(research) {
     const showViewAllButton = research.featured.length > 4 || (research.all && research.all.length > 0);
 
     container.innerHTML = `
-        <h3 style="margin-bottom: 1rem;">Best Papers</h3>
+        <h3 style="margin-bottom: 1rem;">Best Research</h3>
         <div class="grid">
             ${featuredResearch.map(paper => `
                 <div class="card">
@@ -168,7 +168,7 @@ function renderFeaturedResearch(research) {
             `).join('')}
         </div>
         ${showViewAllButton ? `
-            <a href="#research" class="btn btn--primary view-all-btn">See all papers</a>
+            <a href="#research" class="btn btn--primary view-all-btn">See all research</a>
         ` : ''}
     `;
 }
@@ -282,7 +282,7 @@ function renderFeaturedAwards(awards) {
             `).join('')}
         </div>
         ${showViewAllButton ? `
-            <a href="#awards" class="btn btn--primary view-all-btn">Ver todos los premios</a>
+            <a href="#awards" class="btn btn--primary view-all-btn">See all awards</a>
         ` : ''}
     `;
 }
