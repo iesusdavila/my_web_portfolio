@@ -70,7 +70,7 @@
                 "description": "Multi Robot System developed for ROS2 Humble, allows the easy incorporation of several robot models with little configuration. There is no limit on the number of robots, if you incorporate UGV you can provide your parameter file for autonomous navigation.",
                 "image": "images/projects/multi_robot.png",
                 "links": {
-                    "github": "https://github.com/yourusername/robot-explorer",
+                    "github": "https://github.com/iesusdavila/multi_robot",
                     "demo": "https://youtu.be/fS6GwS7P4-A" 
                 },
                 "technologies": ["ROS2 Humble", "Python", "Nav2", "Gazebo"]
