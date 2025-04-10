@@ -69,7 +69,7 @@ function showSection(targetId) {
 
 // Navigation SPA
 function initNavigation() {
-    document.querySelectorAll('.nav__link, .view-all-btn').forEach(link => {
+    document.querySelectorAll('.view-all-btn, .nav__link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
@@ -100,8 +100,8 @@ function renderFeaturedProjects(projects) {
     const container = document.getElementById('featured-projects');
     if (!container || !projects?.featured) return;
 
-    const featuredProjects = projects.featured.slice(0, 4);
-    const showViewAllButton = projects.featured.length > 4 || (projects.all && projects.all.length > 0);
+    const featuredProjects = projects.featured.slice(0, 3);
+    const showViewAllButton = projects.featured.length > 3 || (projects.all && projects.all.length > 0);
 
     container.innerHTML = `
         <h3 style="margin-bottom: 1rem;">Best Projects</h3>
@@ -326,7 +326,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     initAnimations();
     initMobileMenu();
     initThemeToggle();
-    initNavigation();
 
     // Show home section by default
     showSection('home');
@@ -347,6 +346,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderCV(portfolioData.cv);
         renderAwards(portfolioData.awards);
     }
+
+    initNavigation();
 
     // Event listener para botón de descarga CV
     const downloadButton = document.getElementById('downloadCV');
