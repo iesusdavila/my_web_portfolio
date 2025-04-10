@@ -212,6 +212,7 @@ function renderAllResearch(research) {
             <div class="research-card__content">
                 <h3>${paper.title}</h3>
                 <p>${paper.journal} (${paper.year})</p>
+                <p>${paper.description || ''}</p>
                 <div class="card__links">
                     ${paper.links.ieee ? `
                         <a href="${paper.links.ieee}" target="_blank" class="btn btn--secondary">
@@ -272,15 +273,23 @@ function renderFeaturedAwards(awards) {
 
     container.innerHTML = `
         <h3 style="margin-bottom: 1rem;">Awards</h3>
-        <div class="grid">
-            ${featuredAwards.map(award => `
-                <div class="card">
-                    <h3>${award.title}</h3>
-                    <p>${award.organization}</p>
-                    <p>${award.year}</p>
+        ${awards.prizes.map(prize => `
+            <div class="research-card">
+                <img src="${prize.image || '/images/default-research.jpg'}" alt="${prize.title}" class="card__image">
+                <div class="research-card__content">
+                    <h4>${prize.title}</h4>
+                    <p>${prize.organization} - ${prize.year}</p>
+                    <p>${prize.description || ''}</p>
+                    <div class="card__links">
+                        ${prize.certificate ? `
+                            <a href="${prize.certificate}" target="_blank" class="btn btn--secondary">
+                                <i class="fas fa-book"></i> Download Certificate
+                            </a>
+                        ` : ''}
+                    </div>
                 </div>
-            `).join('')}
-        </div>
+            </div>
+        `).join('')}
         ${showViewAllButton ? `
             <a href="#awards" class="btn btn--primary view-all-btn">See all awards</a>
         ` : ''}
@@ -295,12 +304,22 @@ function renderAwards(awards) {
 
     // Renderizar premios
     prizesContainer.innerHTML = `
-        <h3>Awards</h3>
+        <!-- <h3>Awards</h3> -->
         ${awards.prizes.map(prize => `
-            <div class="award-card">
-                <h4>${prize.title}</h4>
-                <p>${prize.organization}</p>
-                <p>${prize.year}</p>
+            <div class="research-card">
+                <img src="${prize.image || '/images/default-research.jpg'}" alt="${prize.title}" class="card__image">
+                <div class="research-card__content">
+                    <h4>${prize.title}</h4>
+                    <p>${prize.organization} - ${prize.year}</p>
+                    <p>${prize.description || ''}</p>
+                    <div class="card__links">
+                        ${prize.certificate ? `
+                            <a href="${prize.certificate}" target="_blank" class="btn btn--secondary">
+                                <i class="fas fa-book"></i> Download Certificate
+                            </a>
+                        ` : ''}
+                    </div>
+                </div>
             </div>
         `).join('')}
     `;
@@ -343,7 +362,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Renderizar secciones completas
         renderAllProjects(portfolioData.projects);
         renderAllResearch(portfolioData.research);
-        console.log(portfolioData.research);
         renderCV(portfolioData.cv);
         renderAwards(portfolioData.awards);
     }

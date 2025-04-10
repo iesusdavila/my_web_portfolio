@@ -176,17 +176,22 @@
     "awards": {
         "featured": [
             {
-                "title": "Premio a la Innovación en Robótica",
+                "title": "Best paper award in the track of Robotics and Automation",
                 "organization": "IEEE Robotics Society",
-                "year": "2023",
-                "description": "Reconocimiento por contribuciones innovadoras en robótica cognitiva"
+                "year": "2024",
+                "description": "Recognition for innovative contributions at the IEEE ETCM Ecuador conference, for the paper 'Software Architecture and Simulation Interface for Autonomous Underwater Vehicles'",
+                "image": "images/research/auv_max.png",
+                "certificate": "../data/Best Paper 39.pdf"
             }
         ],
         "prizes": [
             {
-                "title": "Mejor Paper en Conferencia Internacional",
-                "organization": "International Conference on Robotics",
-                "year": "2022"
+                "title": "Best paper award in the track of Robotics and Automation",
+                "organization": "IEEE Robotics Society",
+                "year": "2024",
+                "description": "Recognition for innovative contributions at the IEEE ETCM Ecuador conference, for the paper 'Software Architecture and Simulation Interface for Autonomous Underwater Vehicles'",
+                "image": "images/research/auv_max.png",
+                "certificate": "../data/Best Paper 39.pdf"
             }
         ],
         "certifications": [
