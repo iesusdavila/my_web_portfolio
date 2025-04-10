@@ -134,30 +134,30 @@
     "cv": {
         "education": [
             {
-                "degree": "Doctorado en Robótica",
-                "institution": "Universidad Example",
-                "year": "2023",
-                "description": "Investigación en robótica cognitiva y aprendizaje profundo"
-            },
-            {
-                "degree": "Maestría en Inteligencia Artificial",
-                "institution": "Tech University",
-                "year": "2020",
-                "description": "Especialización en visión por computadora y aprendizaje por refuerzo"
+                "degree": "Mechatronic Engineering",
+                "institution": "ESPOL",
+                "year": "2024",
+                "description": "Robotics and Deep Learning."
             }
         ],
         "experience": [
             {
-                "position": "Investigador Senior en Robótica",
-                "company": "Instituto de Robótica Avanzada",
-                "period": "2020-Presente",
-                "description": "Desarrollo de algoritmos de IA para sistemas robóticos autónomos"
+                "position": "Robotics and AI Engineer",
+                "company": "CEDIA",
+                "period": "February 2024-Present",
+                "description": "Development of Artificial Vision, LLM and trajectory planning algorithms for theexecution of functionalities."
             },
             {
-                "position": "Ingeniero de IA",
-                "company": "Tech Solutions Inc.",
-                "period": "2018-2020",
-                "description": "Implementación de soluciones de visión por computadora y deep learning"
+                "position": "Digital Factory Intern",
+                "company": "Unilever",
+                "period": "August 2024 - January 2025",
+                "description": "Development of Machine Learning algorithms for process prediction in product manufacturing."
+            },
+            {
+                "position": "Software Developer for UGV",
+                "company": "SUNY (South Korea - Incheon)",
+                "period": "February 2024 - May 2024",
+                "description": "Development of a tracking robot using only a 2D LIDAR sensor, with speed control for precise object tracking."
             }
         ],
         "skills": [
@@ -167,9 +167,11 @@
             "Python",
             "Deep Learning",
             "Computer Vision",
-            "SLAM"
+            "SLAM",
+            "Artificial Vision",
+            "Trajectory Planning"
         ],
-        "pdfUrl": "path/to/cv.pdf"
+        "pdfUrl": "../data/CV_EN.pdf"
     },
     "awards": {
         "featured": [
