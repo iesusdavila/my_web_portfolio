@@ -206,7 +206,7 @@ function renderAllResearch(research) {
     const container = document.querySelector('.research__grid');
     if (!container || !research?.all) return;
 
-    container.innerHTML = [...(research.featured || []), ...(research.all || [])].map(paper => `
+    container.innerHTML = [...(research.featured || [])].map(paper => `
         <div class="research-card">
             <img src="${paper.image || '/images/default-research.jpg'}" alt="${paper.title}" class="research-card__image">
             <div class="research-card__content">
@@ -295,7 +295,7 @@ function renderAwards(awards) {
 
     // Renderizar premios
     prizesContainer.innerHTML = `
-        <h3>Premios</h3>
+        <h3>Awards</h3>
         ${awards.prizes.map(prize => `
             <div class="award-card">
                 <h4>${prize.title}</h4>
@@ -305,18 +305,18 @@ function renderAwards(awards) {
         `).join('')}
     `;
 
-    // Renderizar certificaciones
-    certificationsContainer.innerHTML = `
-        <h3>Certificaciones</h3>
-        ${awards.certifications.map(cert => `
-            <div class="award-card">
-                <h4>${cert.name}</h4>
-                <p>${cert.issuer}</p>
-                <p>${cert.date}</p>
-                ${cert.link ? `<a href="${cert.link}" target="_blank" class="btn btn--secondary">Ver Credencial</a>` : ''}
-            </div>
-        `).join('')}
-    `;
+    // // Renderizar certificaciones
+    // certificationsContainer.innerHTML = `
+    //     <h3>Certificaciones</h3>
+    //     ${awards.certifications.map(cert => `
+    //         <div class="award-card">
+    //             <h4>${cert.name}</h4>
+    //             <p>${cert.issuer}</p>
+    //             <p>${cert.date}</p>
+    //             ${cert.link ? `<a href="${cert.link}" target="_blank" class="btn btn--secondary">Ver Credencial</a>` : ''}
+    //         </div>
+    //     `).join('')}
+    // `;
 }
 
 // Inicialización
@@ -343,6 +343,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Renderizar secciones completas
         renderAllProjects(portfolioData.projects);
         renderAllResearch(portfolioData.research);
+        console.log(portfolioData.research);
         renderCV(portfolioData.cv);
         renderAwards(portfolioData.awards);
     }
