@@ -236,24 +236,24 @@ function renderCV(cvData) {
 
     cvContent.innerHTML = `
         <div class="cv__section">
-            <h3>Educación</h3>
-            ${cvData.education.map(edu => `
-                <div class="cv__item">
-                    <h4>${edu.degree}</h4>
-                    <p>${edu.institution}</p>
-                    <p>${edu.year}</p>
-                    <p>${edu.description || ''}</p>
-                </div>
-            `).join('')}
-        </div>
-        <div class="cv__section">
-            <h3>Experiencia</h3>
+            <h3>Experience</h3>
             ${cvData.experience.map(exp => `
                 <div class="cv__item">
                     <h4>${exp.position}</h4>
                     <p>${exp.company}</p>
                     <p>${exp.period}</p>
                     <p>${exp.description}</p>
+                </div>
+            `).join('')}
+        </div>
+        <div class="cv__section">
+            <h3>Education</h3>
+            ${cvData.education.map(edu => `
+                <div class="cv__item">
+                    <h4>${edu.degree}</h4>
+                    <p>${edu.institution}</p>
+                    <p>${edu.year}</p>
+                    <p>${edu.description || ''}</p>
                 </div>
             `).join('')}
         </div>
