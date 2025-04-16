@@ -1,0 +1,76 @@
+---
+import Layout from './Layout.astro';
+
+export interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    image: string;
+    technologies: string[];
+    date: string;
+    github?: string;
+    demo?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`${frontmatter.title} | Projects`}>
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <a href="/projects" class="inline-flex items-center mb-8 text-cyan-600 dark:text-cyan-400 hover:underline">
+      <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+      Back to all projects
+    </a>
+    
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">{frontmatter.title}</h1>
+    
+    <div class="flex flex-wrap gap-2 mb-6">
+      {frontmatter.technologies.map((tech: string) => (
+        <span class="px-3 py-1 bg-neutral-200 dark:bg-neutral-800 rounded-full text-sm">
+          {tech}
+        </span>
+      ))}
+    </div>
+    
+    <p class="text-neutral-600 dark:text-neutral-400 mb-8">{frontmatter.date}</p>
+    
+    <div class="relative h-[300px] md:h-[400px] mb-8 rounded-xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
+      <img 
+        src={frontmatter.image} 
+        alt={frontmatter.title} 
+        class="w-full h-full object-cover"
+      />
+    </div>
+    
+    <div class="prose prose-lg dark:prose-invert max-w-none mb-8">
+      <slot />
+    </div>
+    
+    <div class="flex flex-wrap gap-4 mt-12">
+      {frontmatter.github && (
+        <a 
+          href={frontmatter.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-6 py-3 rounded-lg bg-neutral-800 hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-600 text-white transition-colors"
+        >
+          <i data-feather="github" class="w-5 h-5 mr-2"></i>
+          GitHub Repository
+        </a>
+      )}
+      
+      {frontmatter.demo && (
+        <a 
+          href={frontmatter.demo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-6 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 text-white transition-colors"
+        >
+          <i data-feather="external-link" class="w-5 h-5 mr-2"></i>
+          Live Demo
+        </a>
+      )}
+    </div>
+  </div>
+</Layout>

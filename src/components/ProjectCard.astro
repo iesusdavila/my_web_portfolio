@@ -1,0 +1,65 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  github?: string;
+  demo?: string;
+}
+
+const { title, description, image, technologies, github, demo } = Astro.props;
+---
+
+<div class="group bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl dark:shadow-neutral-900/20 dark:hover:shadow-cyan-900/20 transition duration-300 h-full flex flex-col transform hover:-translate-y-1">
+  <!-- Project Image -->
+  <div class="relative h-48 w-full bg-neutral-200 dark:bg-neutral-700 overflow-hidden">
+    <img 
+      src={image} 
+      alt={title} 
+      class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+      <div class="flex gap-2">
+        {github && (
+          <a 
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white bg-neutral-800/80 hover:bg-neutral-800 p-2 rounded-full transition"
+            aria-label="GitHub Repository"
+          >
+            <i data-feather="github" class="w-5 h-5"></i>
+          </a>
+        )}
+        
+        {demo && (
+          <a 
+            href={demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white bg-cyan-600/80 hover:bg-cyan-600 p-2 rounded-full transition"
+            aria-label="Live Demo"
+          >
+            <i data-feather="external-link" class="w-5 h-5"></i>
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+  
+  <!-- Project Info -->
+  <div class="p-6 flex-grow flex flex-col">
+    <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition">{title}</h3>
+    <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4 flex-grow">{description}</p>
+    
+    <!-- Technologies -->
+    <div class="flex flex-wrap gap-2 mt-auto">
+      {technologies.map((tech) => (
+        <span class="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-full text-xs">
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>

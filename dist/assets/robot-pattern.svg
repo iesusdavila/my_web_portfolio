@@ -1,0 +1,27 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.5">
+    <!-- Circuit lines -->
+    <path d="M20 20 H80 V80 H20 Z" stroke="currentColor" stroke-width="1" fill="none" />
+    <path d="M120 20 H180 V80 H120 Z" stroke="currentColor" stroke-width="1" fill="none" />
+    <path d="M20 120 H80 V180 H20 Z" stroke="currentColor" stroke-width="1" fill="none" />
+    <path d="M120 120 H180 V180 H120 Z" stroke="currentColor" stroke-width="1" fill="none" />
+    
+    <!-- Connecting lines -->
+    <path d="M80 50 H120" stroke="currentColor" stroke-width="1" fill="none" />
+    <path d="M80 150 H120" stroke="currentColor" stroke-width="1" fill="none" />
+    <path d="M50 80 V120" stroke="currentColor" stroke-width="1" fill="none" />
+    <path d="M150 80 V120" stroke="currentColor" stroke-width="1" fill="none" />
+    
+    <!-- Circuit nodes -->
+    <circle cx="50" cy="50" r="4" fill="currentColor" />
+    <circle cx="150" cy="50" r="4" fill="currentColor" />
+    <circle cx="50" cy="150" r="4" fill="currentColor" />
+    <circle cx="150" cy="150" r="4" fill="currentColor" />
+    
+    <!-- Small components -->
+    <rect x="90" y="45" width="20" height="10" rx="2" stroke="currentColor" stroke-width="1" fill="none" />
+    <rect x="90" y="145" width="20" height="10" rx="2" stroke="currentColor" stroke-width="1" fill="none" />
+    <rect x="45" y="90" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1" fill="none" />
+    <rect x="145" y="90" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1" fill="none" />
+  </g>
+</svg>

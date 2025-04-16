@@ -1,0 +1,78 @@
+[
+  {
+    "title": "Autonomous Delivery Robot",
+    "description": "A fully autonomous robot designed to navigate indoor environments and deliver items to specific locations.",
+    "image": "/assets/robot-pattern.svg",
+    "technologies": ["ROS2", "Computer Vision", "SLAM", "C++"],
+    "github": "https://github.com/username/autonomous-delivery-robot",
+    "demo": "https://example.com/robot-demo",
+    "categories": ["robotics", "computer-vision", "ros"]
+  },
+  {
+    "title": "AI-Powered Robotic Arm",
+    "description": "A robotic arm that uses deep learning to identify and pick up objects of various shapes and sizes.",
+    "image": "/assets/robot-pattern.svg",
+    "technologies": ["PyTorch", "ROS", "Python", "Computer Vision"],
+    "github": "https://github.com/username/ai-robotic-arm",
+    "categories": ["robotics", "ai", "computer-vision", "ros"]
+  },
+  {
+    "title": "Drone Navigation System",
+    "description": "A vision-based navigation system for drones that enables autonomous flight in GPS-denied environments.",
+    "image": "/assets/circuit-bg.svg",
+    "technologies": ["OpenCV", "Machine Learning", "C++", "Python"],
+    "github": "https://github.com/username/drone-navigation",
+    "demo": "https://example.com/drone-demo",
+    "categories": ["robotics", "computer-vision", "ai"]
+  },
+  {
+    "title": "Human-Robot Interaction Framework",
+    "description": "A framework for natural interaction between humans and robots using gesture recognition and voice commands.",
+    "image": "/assets/robot-pattern.svg",
+    "technologies": ["TensorFlow", "NLP", "ROS", "Python"],
+    "github": "https://github.com/username/human-robot-interaction",
+    "categories": ["robotics", "ai", "ros"]
+  },
+  {
+    "title": "Smart Manufacturing Robot Cell",
+    "description": "An integrated robotic cell for smart manufacturing with real-time quality control and adaptive process optimization.",
+    "image": "/assets/circuit-bg.svg",
+    "technologies": ["ROS2", "Industrial Automation", "Computer Vision", "Machine Learning"],
+    "github": "https://github.com/username/smart-manufacturing",
+    "categories": ["robotics", "computer-vision", "ai", "ros"]
+  },
+  {
+    "title": "Multi-Robot Coordination System",
+    "description": "A system that enables multiple robots to coordinate their actions and work together to accomplish complex tasks.",
+    "image": "/assets/robot-pattern.svg",
+    "technologies": ["ROS2", "Multi-agent Systems", "Python", "C++"],
+    "github": "https://github.com/username/multi-robot-coordination",
+    "demo": "https://example.com/multi-robot-demo",
+    "categories": ["robotics", "ai", "ros"]
+  },
+  {
+    "title": "Neural Network Control System",
+    "description": "A neural network-based control system for non-linear dynamic systems, applied to robotic manipulators.",
+    "image": "/assets/circuit-bg.svg",
+    "technologies": ["PyTorch", "Control Theory", "Python", "MATLAB"],
+    "github": "https://github.com/username/neural-control",
+    "categories": ["ai", "robotics"]
+  },
+  {
+    "title": "Autonomous Agriculture Robot",
+    "description": "An agricultural robot capable of autonomous navigation, crop monitoring, and selective harvesting.",
+    "image": "/assets/robot-pattern.svg",
+    "technologies": ["ROS", "Computer Vision", "Machine Learning", "Sensor Fusion"],
+    "github": "https://github.com/username/agri-robot",
+    "categories": ["robotics", "computer-vision", "ai", "ros"]
+  },
+  {
+    "title": "Real-time Object Detection System",
+    "description": "A high-performance object detection system optimized for embedded devices in robotics applications.",
+    "image": "/assets/circuit-bg.svg",
+    "technologies": ["TensorFlow Lite", "Computer Vision", "C++", "CUDA"],
+    "github": "https://github.com/username/realtime-detection",
+    "demo": "https://example.com/detection-demo",
+    "categories": ["computer-vision", "ai"]
+  }
+]

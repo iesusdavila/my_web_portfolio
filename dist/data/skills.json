@@ -1,0 +1,237 @@
+{
+  "technical": [
+    {
+      "category": "Robotics",
+      "skills": [
+        {
+          "name": "ROS/ROS2",
+          "level": 95,
+          "icon": "robot"
+        },
+        {
+          "name": "Robot Kinematics",
+          "level": 90,
+          "icon": "activity"
+        },
+        {
+          "name": "SLAM",
+          "level": 85,
+          "icon": "map"
+        },
+        {
+          "name": "Motion Planning",
+          "level": 90,
+          "icon": "navigation"
+        },
+        {
+          "name": "Robot Control Systems",
+          "level": 95,
+          "icon": "sliders"
+        }
+      ]
+    },
+    {
+      "category": "Artificial Intelligence",
+      "skills": [
+        {
+          "name": "Machine Learning",
+          "level": 90,
+          "icon": "cpu"
+        },
+        {
+          "name": "Deep Learning",
+          "level": 85,
+          "icon": "layers"
+        },
+        {
+          "name": "Reinforcement Learning",
+          "level": 80,
+          "icon": "trending-up"
+        },
+        {
+          "name": "Natural Language Processing",
+          "level": 75,
+          "icon": "message-circle"
+        },
+        {
+          "name": "Large Language Models",
+          "level": 80,
+          "icon": "book-open"
+        }
+      ]
+    },
+    {
+      "category": "Computer Vision",
+      "skills": [
+        {
+          "name": "Image Processing",
+          "level": 90,
+          "icon": "image"
+        },
+        {
+          "name": "Object Detection",
+          "level": 85,
+          "icon": "eye"
+        },
+        {
+          "name": "Semantic Segmentation",
+          "level": 80,
+          "icon": "divide-circle"
+        },
+        {
+          "name": "Visual SLAM",
+          "level": 85,
+          "icon": "compass"
+        },
+        {
+          "name": "3D Vision",
+          "level": 80,
+          "icon": "box"
+        }
+      ]
+    },
+    {
+      "category": "Programming",
+      "skills": [
+        {
+          "name": "Python",
+          "level": 95,
+          "icon": "code"
+        },
+        {
+          "name": "C++",
+          "level": 90,
+          "icon": "code"
+        },
+        {
+          "name": "MATLAB",
+          "level": 85,
+          "icon": "code"
+        },
+        {
+          "name": "JavaScript",
+          "level": 75,
+          "icon": "code"
+        },
+        {
+          "name": "CUDA",
+          "level": 70,
+          "icon": "code"
+        }
+      ]
+    },
+    {
+      "category": "Hardware",
+      "skills": [
+        {
+          "name": "Embedded Systems",
+          "level": 85,
+          "icon": "cpu"
+        },
+        {
+          "name": "Sensor Integration",
+          "level": 90,
+          "icon": "radio"
+        },
+        {
+          "name": "PCB Design",
+          "level": 75,
+          "icon": "layout"
+        },
+        {
+          "name": "Microcontrollers",
+          "level": 85,
+          "icon": "chip"
+        },
+        {
+          "name": "3D Printing",
+          "level": 80,
+          "icon": "printer"
+        }
+      ]
+    }
+  ],
+  "software": [
+    {
+      "name": "TensorFlow",
+      "level": 90,
+      "icon": "layers"
+    },
+    {
+      "name": "PyTorch",
+      "level": 85,
+      "icon": "zap"
+    },
+    {
+      "name": "OpenCV",
+      "level": 95,
+      "icon": "eye"
+    },
+    {
+      "name": "ROS/ROS2",
+      "level": 95,
+      "icon": "server"
+    },
+    {
+      "name": "Gazebo",
+      "level": 90,
+      "icon": "box"
+    },
+    {
+      "name": "Arduino",
+      "level": 95,
+      "icon": "cpu"
+    },
+    {
+      "name": "SOLIDWORKS",
+      "level": 80,
+      "icon": "box"
+    },
+    {
+      "name": "MATLAB/Simulink",
+      "level": 85,
+      "icon": "bar-chart"
+    },
+    {
+      "name": "Git",
+      "level": 85,
+      "icon": "git-branch"
+    },
+    {
+      "name": "Docker",
+      "level": 80,
+      "icon": "box"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Spanish",
+      "level": "Native",
+      "icon": "message-circle"
+    },
+    {
+      "name": "English",
+      "level": "Fluent",
+      "icon": "message-circle"
+    },
+    {
+      "name": "French",
+      "level": "Intermediate",
+      "icon": "message-circle"
+    },
+    {
+      "name": "German",
+      "level": "Basic",
+      "icon": "message-circle"
+    }
+  ],
+  "soft": [
+    "Problem Solving",
+    "Team Leadership",
+    "Project Management",
+    "Technical Writing",
+    "Research Methodology",
+    "Public Speaking",
+    "Cross-functional Collaboration"
+  ]
+}

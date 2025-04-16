@@ -1,0 +1,45 @@
+---
+export interface Props {
+  title: string;
+  organization: string;
+  date: string;
+  description: string;
+  certificate?: string;
+}
+
+const { title, organization, date, description, certificate } = Astro.props;
+---
+
+<div class="group bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl dark:shadow-neutral-900/20 dark:hover:shadow-cyan-900/20 transition duration-300 h-full flex flex-col transform hover:-translate-y-1">
+  <!-- Award Header -->
+  <div class="p-4 bg-cyan-50 dark:bg-cyan-900/20 border-b border-cyan-100 dark:border-cyan-900/30 flex items-center">
+    <div class="p-2 bg-cyan-100 dark:bg-cyan-800/30 rounded-full mr-3">
+      <i data-feather="award" class="w-6 h-6 text-cyan-600 dark:text-cyan-400"></i>
+    </div>
+    <h3 class="font-bold text-lg text-cyan-900 dark:text-cyan-100">{title}</h3>
+  </div>
+  
+  <!-- Award Info -->
+  <div class="p-6 flex-grow flex flex-col">
+    <div class="mb-4">
+      <p class="text-neutral-800 dark:text-neutral-200 font-medium">{organization}</p>
+      <p class="text-neutral-600 dark:text-neutral-400 text-sm">{date}</p>
+    </div>
+    
+    <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4 flex-grow">{description}</p>
+    
+    {certificate && (
+      <div class="mt-auto">
+        <a 
+          href={certificate}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-4 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-cyan-100 dark:hover:bg-cyan-900/30 text-neutral-800 dark:text-neutral-200 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors text-sm"
+        >
+          <i data-feather="download" class="w-4 h-4 mr-2"></i>
+          Download Certificate
+        </a>
+      </div>
+    )}
+  </div>
+</div>

@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PaperCard from '../components/PaperCard.astro';
+import papers from '../data/papers.json';
+---
+
+<Layout title="Research Papers | Mechatronics Engineer Portfolio">
+  <div class="container mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Research Papers</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+        Academic publications and research contributions in the fields of robotics, AI, and mechatronics.
+      </p>
+    </header>
+
+    <!-- Filter Options -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <button class="filter-btn active px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="all">
+        All Papers
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="robotics">
+        Robotics
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="ai">
+        AI & Machine Learning
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="computer-vision">
+        Computer Vision
+      </button>
+    </div>
+
+    <!-- Papers Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {papers.map((paper) => (
+        <div class="paper-card" data-categories={paper.categories.join(',')}>
+          <PaperCard
+            title={paper.title}
+            journal={paper.journal}
+            date={paper.date}
+            authors={paper.authors}
+            doi={paper.doi}
+            pdf={paper.pdf}
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Empty state (hidden by default) -->
+    <div id="no-results" class="hidden text-center py-16">
+      <div class="text-5xl mb-4">📚</div>
+      <h3 class="text-2xl font-bold mb-2">No papers found</h3>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        No papers match your current filter. Try selecting a different category.
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Filter functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const paperCards = document.querySelectorAll('.paper-card');
+    const noResults = document.getElementById('no-results');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-cyan-600', 'dark:bg-cyan-700', 'text-white'));
+        
+        // Add active class to clicked button
+        button.classList.add('active', 'bg-cyan-600', 'dark:bg-cyan-700', 'text-white');
+        
+        const filter = button.getAttribute('data-filter');
+        
+        let visibleCount = 0;
+        
+        // Filter papers
+        paperCards.forEach(card => {
+          const categories = card.getAttribute('data-categories').split(',');
+          
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = 'block';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Show/hide empty state
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>

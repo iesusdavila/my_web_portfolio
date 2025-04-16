@@ -1,0 +1,86 @@
+---
+import personalInfo from '../data/info.json';
+---
+
+<footer class="bg-white dark:bg-neutral-900 py-12 border-t border-neutral-200 dark:border-neutral-800">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Logo and about -->
+      <div class="md:col-span-2">
+        <a href="/" class="flex items-center mb-4">
+          <img src="/assets/logo.svg" alt="Logo" class="h-10 w-10 mr-3" />
+          <span class="font-bold text-xl">MechaRobotics</span>
+        </a>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6 max-w-md">
+          Specializing in mechatronics engineering with a focus on robotics, AI, computer vision, and ROS2 development.
+        </p>
+        <div class="flex gap-4">
+          {personalInfo.socialLinks.map((link) => (
+            <a 
+              href={link.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+              aria-label={link.name}
+            >
+              <i data-feather={link.icon} class="w-5 h-5"></i>
+            </a>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="/" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Home</a>
+          </li>
+          <li>
+            <a href="/projects" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Projects</a>
+          </li>
+          <li>
+            <a href="/papers" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Papers</a>
+          </li>
+          <li>
+            <a href="/awards" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Awards</a>
+          </li>
+          <li>
+            <a href="/cv" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">CV</a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Contact -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Contact</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <i data-feather="mail" class="w-5 h-5 mr-2 text-neutral-600 dark:text-neutral-400 mt-0.5"></i>
+            <span class="text-neutral-600 dark:text-neutral-400">{personalInfo.email}</span>
+          </li>
+          <li class="flex items-start">
+            <i data-feather="phone" class="w-5 h-5 mr-2 text-neutral-600 dark:text-neutral-400 mt-0.5"></i>
+            <span class="text-neutral-600 dark:text-neutral-400">{personalInfo.phone}</span>
+          </li>
+          <li class="flex items-start">
+            <i data-feather="map-pin" class="w-5 h-5 mr-2 text-neutral-600 dark:text-neutral-400 mt-0.5"></i>
+            <span class="text-neutral-600 dark:text-neutral-400">{personalInfo.location}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="border-t border-neutral-200 dark:border-neutral-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+        &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+      </p>
+      
+      <div class="flex gap-4 mt-4 md:mt-0">
+        <a href="/contact" class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors text-sm">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

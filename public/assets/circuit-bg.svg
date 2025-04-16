@@ -1,0 +1,61 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.1">
+    <!-- Horizontal Lines -->
+    <path d="M0 100 H1000" stroke="currentColor" stroke-width="2" />
+    <path d="M0 300 H1000" stroke="currentColor" stroke-width="2" />
+    <path d="M0 500 H1000" stroke="currentColor" stroke-width="2" />
+    <path d="M0 700 H1000" stroke="currentColor" stroke-width="2" />
+    <path d="M0 900 H1000" stroke="currentColor" stroke-width="2" />
+    
+    <!-- Vertical Lines -->
+    <path d="M100 0 V1000" stroke="currentColor" stroke-width="2" />
+    <path d="M300 0 V1000" stroke="currentColor" stroke-width="2" />
+    <path d="M500 0 V1000" stroke="currentColor" stroke-width="2" />
+    <path d="M700 0 V1000" stroke="currentColor" stroke-width="2" />
+    <path d="M900 0 V1000" stroke="currentColor" stroke-width="2" />
+    
+    <!-- Nodes -->
+    <circle cx="100" cy="100" r="8" fill="currentColor" />
+    <circle cx="100" cy="300" r="8" fill="currentColor" />
+    <circle cx="100" cy="500" r="8" fill="currentColor" />
+    <circle cx="100" cy="700" r="8" fill="currentColor" />
+    <circle cx="100" cy="900" r="8" fill="currentColor" />
+    
+    <circle cx="300" cy="100" r="8" fill="currentColor" />
+    <circle cx="300" cy="300" r="8" fill="currentColor" />
+    <circle cx="300" cy="500" r="8" fill="currentColor" />
+    <circle cx="300" cy="700" r="8" fill="currentColor" />
+    <circle cx="300" cy="900" r="8" fill="currentColor" />
+    
+    <circle cx="500" cy="100" r="8" fill="currentColor" />
+    <circle cx="500" cy="300" r="8" fill="currentColor" />
+    <circle cx="500" cy="500" r="8" fill="currentColor" />
+    <circle cx="500" cy="700" r="8" fill="currentColor" />
+    <circle cx="500" cy="900" r="8" fill="currentColor" />
+    
+    <circle cx="700" cy="100" r="8" fill="currentColor" />
+    <circle cx="700" cy="300" r="8" fill="currentColor" />
+    <circle cx="700" cy="500" r="8" fill="currentColor" />
+    <circle cx="700" cy="700" r="8" fill="currentColor" />
+    <circle cx="700" cy="900" r="8" fill="currentColor" />
+    
+    <circle cx="900" cy="100" r="8" fill="currentColor" />
+    <circle cx="900" cy="300" r="8" fill="currentColor" />
+    <circle cx="900" cy="500" r="8" fill="currentColor" />
+    <circle cx="900" cy="700" r="8" fill="currentColor" />
+    <circle cx="900" cy="900" r="8" fill="currentColor" />
+    
+    <!-- Components -->
+    <rect x="280" y="380" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
+    <rect x="480" y="280" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
+    <rect x="680" y="580" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
+    <rect x="180" y="680" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
+    <rect x="580" y="780" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
+    <rect x="880" y="480" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
+    
+    <circle cx="200" cy="200" r="20" stroke="currentColor" stroke-width="2" fill="none" />
+    <circle cx="400" cy="600" r="20" stroke="currentColor" stroke-width="2" fill="none" />
+    <circle cx="600" cy="400" r="20" stroke="currentColor" stroke-width="2" fill="none" />
+    <circle cx="800" cy="800" r="20" stroke="currentColor" stroke-width="2" fill="none" />
+  </g>
+</svg>

@@ -1,0 +1,98 @@
+[
+  {
+    "name": "ROS/ROS2",
+    "icon": "activity",
+    "category": "robotics",
+    "proficiency": 95
+  },
+  {
+    "name": "Computer Vision",
+    "icon": "eye",
+    "category": "ai",
+    "proficiency": 90
+  },
+  {
+    "name": "Machine Learning",
+    "icon": "cpu",
+    "category": "ai",
+    "proficiency": 85
+  },
+  {
+    "name": "Python",
+    "icon": "code",
+    "category": "software",
+    "proficiency": 95
+  },
+  {
+    "name": "C++",
+    "icon": "code",
+    "category": "software",
+    "proficiency": 85
+  },
+  {
+    "name": "SLAM",
+    "icon": "map",
+    "category": "robotics",
+    "proficiency": 80
+  },
+  {
+    "name": "TensorFlow",
+    "icon": "layers",
+    "category": "ai",
+    "proficiency": 85
+  },
+  {
+    "name": "PyTorch",
+    "icon": "layers",
+    "category": "ai",
+    "proficiency": 80
+  },
+  {
+    "name": "Robot Control",
+    "icon": "sliders",
+    "category": "robotics",
+    "proficiency": 90
+  },
+  {
+    "name": "Sensor Fusion",
+    "icon": "git-merge",
+    "category": "robotics",
+    "proficiency": 85
+  },
+  {
+    "name": "Embedded Systems",
+    "icon": "cpu",
+    "category": "hardware",
+    "proficiency": 75
+  },
+  {
+    "name": "PCB Design",
+    "icon": "server",
+    "category": "hardware",
+    "proficiency": 70
+  },
+  {
+    "name": "Arduino/Raspberry Pi",
+    "icon": "hard-drive",
+    "category": "hardware",
+    "proficiency": 85
+  },
+  {
+    "name": "3D Printing",
+    "icon": "box",
+    "category": "hardware",
+    "proficiency": 80
+  },
+  {
+    "name": "OpenCV",
+    "icon": "eye",
+    "category": "software",
+    "proficiency": 90
+  },
+  {
+    "name": "Natural Language Processing",
+    "icon": "message-square",
+    "category": "ai",
+    "proficiency": 75
+  }
+]

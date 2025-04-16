@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import personalInfo from '../data/info.json';
+---
+
+<Layout title="Contact | Mechatronics Engineer Portfolio">
+  <div class="container mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+        Have a project idea or research proposal? Feel free to reach out to discuss how we can work together.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <!-- Contact Information -->
+      <div class="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-xl dark:shadow-2xl dark:shadow-cyan-900/10 order-2 md:order-1">
+        <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+        
+        <div class="space-y-6">
+          <div class="flex items-start">
+            <div class="bg-cyan-100 dark:bg-cyan-900/30 p-3 rounded-full mr-4">
+              <i data-feather="mail" class="w-6 h-6 text-cyan-600 dark:text-cyan-400"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Email</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">{personalInfo.email}</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-cyan-100 dark:bg-cyan-900/30 p-3 rounded-full mr-4">
+              <i data-feather="phone" class="w-6 h-6 text-cyan-600 dark:text-cyan-400"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Phone</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">{personalInfo.phone}</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-cyan-100 dark:bg-cyan-900/30 p-3 rounded-full mr-4">
+              <i data-feather="map-pin" class="w-6 h-6 text-cyan-600 dark:text-cyan-400"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Location</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">{personalInfo.location}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-12">
+          <h3 class="font-semibold text-lg mb-4">Connect on Social Media</h3>
+          <div class="flex gap-4">
+            {personalInfo.socialLinks.map((link) => (
+              <a 
+                href={link.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="bg-neutral-100 dark:bg-neutral-700 p-3 rounded-full text-neutral-800 dark:text-neutral-200 hover:bg-cyan-100 dark:hover:bg-cyan-900/30 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                aria-label={link.name}
+              >
+                <i data-feather={link.icon} class="w-5 h-5"></i>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-xl dark:shadow-2xl dark:shadow-cyan-900/10 order-1 md:order-2">
+        <h2 class="text-2xl font-bold mb-6">Send a Message</h2>
+        <ContactForm />
+      </div>
+    </div>
+  </div>
+</Layout>

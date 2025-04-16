@@ -1,0 +1,119 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Autonomous Navigation Robot",
+      "description": "Developed an autonomous robot capable of navigating complex indoor environments using SLAM and deep reinforcement learning for obstacle avoidance.",
+      "longDescription": "This project involved designing and implementing a complete autonomous navigation system for indoor robots. I developed a custom SLAM algorithm that combines LiDAR data with visual inputs to create accurate real-time maps. The navigation system uses deep reinforcement learning to optimize path planning and obstacle avoidance. The robot can navigate through dynamic environments, avoiding moving obstacles and adapting to changes in the environment layout.",
+      "image": "autonomous-robot",
+      "technologies": ["ROS2", "Python", "TensorFlow", "LiDAR", "Computer Vision"],
+      "year": 2023,
+      "featured": true,
+      "links": {
+        "github": "https://github.com/juan-martinez/autonomous-nav-robot",
+        "demo": "https://youtube.com/watch?v=autonomous-robot-demo",
+        "paper": "https://arxiv.org/abs/xxxx.xxxxx"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Robotic Arm with Advanced Grasping",
+      "description": "Created a 6-DOF robotic arm with tactile sensors and computer vision for precise object manipulation in unstructured environments.",
+      "longDescription": "This project features a custom-designed 6-DOF robotic arm equipped with advanced tactile sensors and computer vision capabilities. The system can recognize arbitrary objects, plan optimal grasping strategies, and execute precise manipulations. Using a combination of depth cameras and custom-built tactile sensors, the arm can handle fragile and irregularly shaped objects with high precision. The control system integrates reinforcement learning techniques to continuously improve grasping performance through experience.",
+      "image": "robotic-arm",
+      "technologies": ["ROS", "C++", "PyTorch", "OpenCV", "PCB Design"],
+      "year": 2022,
+      "featured": true,
+      "links": {
+        "github": "https://github.com/juan-martinez/advanced-robotic-arm",
+        "demo": "https://youtube.com/watch?v=robotic-arm-demo"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Multi-agent Drone Swarm",
+      "description": "Implemented a coordinated drone swarm system capable of collaborative mapping and search operations in disaster response scenarios.",
+      "longDescription": "This project demonstrates the power of multi-agent systems in real-world applications. I developed algorithms for coordinated flight, distributed task allocation, and collaborative mapping for a swarm of up to 10 drones. The system enables rapid search and mapping operations in disaster scenarios, with drones autonomously dividing search areas and sharing discoveries in real-time. The swarm demonstrates emergent intelligence, adapting formation and search patterns based on environmental conditions and mission objectives.",
+      "image": "drone-swarm",
+      "technologies": ["ROS2", "Python", "MAVLINK", "Multi-agent Systems"],
+      "year": 2022,
+      "featured": true,
+      "links": {
+        "github": "https://github.com/juan-martinez/drone-swarm",
+        "demo": "https://youtube.com/watch?v=drone-swarm-demo",
+        "paper": "https://arxiv.org/abs/xxxx.xxxxx"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Real-time Emotion Recognition System",
+      "description": "Built a real-time emotion recognition system using convolutional neural networks that can identify seven basic emotions from facial expressions.",
+      "longDescription": "This project features a state-of-the-art emotion recognition system that analyzes facial expressions in real-time. I developed and trained a custom CNN architecture that achieves 94% accuracy in identifying seven basic emotions: happiness, sadness, anger, fear, surprise, disgust, and neutral. The system processes video at 30fps on standard hardware and includes a lightweight model variant for edge devices. Applications include human-robot interaction, customer sentiment analysis, and accessibility tools for individuals with social communication challenges.",
+      "image": "emotion-recognition",
+      "technologies": ["Python", "TensorFlow", "OpenCV", "Keras"],
+      "year": 2021,
+      "featured": false,
+      "links": {
+        "github": "https://github.com/juan-martinez/emotion-recognition",
+        "demo": "https://youtube.com/watch?v=emotion-recognition-demo"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Soft Robotic Exoskeleton",
+      "description": "Designed and fabricated a soft robotic exoskeleton for upper limb rehabilitation, using pneumatic actuators and EMG-based control.",
+      "longDescription": "This project represents a breakthrough in wearable rehabilitation technology. I designed a flexible, lightweight exoskeleton using soft pneumatic actuators that conform to the user's arm. The system interprets the user's intended movements through EMG sensors and provides appropriate assistance. The control system adaptively adjusts support levels based on the user's strength and recovery progress. Clinical testing demonstrated significant improvements in motor function recovery rates compared to conventional rehabilitation methods.",
+      "image": "exoskeleton",
+      "technologies": ["Arduino", "EMG Sensors", "Soft Robotics", "3D Printing", "C++"],
+      "year": 2021,
+      "featured": false,
+      "links": {
+        "github": "https://github.com/juan-martinez/soft-exoskeleton",
+        "paper": "https://arxiv.org/abs/xxxx.xxxxx"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Visual-Inertial SLAM for AR Applications",
+      "description": "Developed a robust visual-inertial SLAM system for AR applications, capable of real-time operation on mobile devices.",
+      "longDescription": "This project focused on creating a lightweight yet accurate SLAM system specifically optimized for augmented reality applications on mobile devices. I developed novel algorithms that fuse visual features with IMU data to achieve robust tracking even under challenging conditions like rapid movement or changing lighting. The system includes methods for loop closure detection and map reuse to enable persistent AR experiences in familiar environments. The implementation achieves 60fps operation on modern smartphones while maintaining sub-centimeter tracking accuracy.",
+      "image": "visual-slam",
+      "technologies": ["C++", "OpenCV", "Visual SLAM", "IMU Fusion"],
+      "year": 2020,
+      "featured": false,
+      "links": {
+        "github": "https://github.com/juan-martinez/visual-inertial-slam",
+        "demo": "https://youtube.com/watch?v=visual-slam-demo",
+        "paper": "https://arxiv.org/abs/xxxx.xxxxx"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Humanoid Robot Control System",
+      "description": "Implemented a whole-body control system for a humanoid robot, enabling dynamic walking and physical interaction with the environment.",
+      "longDescription": "This project tackled the complex challenge of whole-body control for bipedal humanoid robots. I developed a hierarchical control framework that coordinates multiple objectives simultaneously, including balance maintenance, locomotion, and manipulation tasks. The system generates dynamically stable walking gaits that can adapt to different terrains and perturbations in real-time. The controller enables the robot to physically interact with the environment while maintaining balance, opening possibilities for complex tasks like door opening, tool use, and collaborative manipulation with humans.",
+      "image": "humanoid-robot",
+      "technologies": ["C++", "ROS", "Optimal Control", "Dynamics Simulation"],
+      "year": 2019,
+      "featured": false,
+      "links": {
+        "github": "https://github.com/juan-martinez/humanoid-control",
+        "demo": "https://youtube.com/watch?v=humanoid-robot-demo"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Agricultural Monitoring Drone System",
+      "description": "Created an integrated drone system for agricultural monitoring, combining multispectral imaging with AI for crop health analysis.",
+      "longDescription": "This project delivers an end-to-end solution for precision agriculture. I designed a custom drone platform equipped with multispectral cameras and developed the complete software stack for autonomous operation and data analysis. The system automatically captures, processes, and analyzes multispectral imagery to detect early signs of crop stress, disease, nutrient deficiencies, and water stress. The AI-based analysis engine generates detailed reports and prescription maps that farmers can use to optimize resource application. Field tests demonstrated a 30% reduction in water usage and 25% reduction in fertilizer application while maintaining or improving crop yields.",
+      "image": "agri-drone",
+      "technologies": ["Python", "Drone Programming", "Multispectral Imaging", "Machine Learning"],
+      "year": 2019,
+      "featured": false,
+      "links": {
+        "github": "https://github.com/juan-martinez/agricultural-drone",
+        "demo": "https://youtube.com/watch?v=agricultural-drone-demo"
+      }
+    }
+  ]
+}

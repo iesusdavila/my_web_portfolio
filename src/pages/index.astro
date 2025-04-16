@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import SkillBadge from '../components/SkillBadge.astro';
+import HighlightSection from '../components/HighlightSection.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PaperCard from '../components/PaperCard.astro';
+import AwardCard from '../components/AwardCard.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+// Load data
+import personalInfo from '../data/info.json';
+import skills from '../data/skills.json';
+import projects from '../data/projects.json';
+import papers from '../data/papers.json';
+import awards from '../data/awards.json';
+
+// Get top projects, papers and awards
+const topProjects = projects.slice(0, 3);
+const topPapers = papers.slice(0, 3);
+const topAwards = awards.slice(0, 3);
+---
+
+<Layout title={`${personalInfo.name} | Mechatronics Engineer`}>
+  <div class="container mx-auto px-4">
+    <!-- Hero Section -->
+    <Hero 
+      name={personalInfo.name}
+      title={personalInfo.title}
+      bio={personalInfo.bio}
+      image={personalInfo.profileImage}
+      socialLinks={personalInfo.socialLinks}
+    />
+
+    <!-- Skills Section -->
+    <section class="py-12 md:py-20">
+      <div class="w-full max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">My Skills & Technologies</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {skills.map((skill) => (
+            <SkillBadge
+              name={skill.name}
+              icon={skill.icon}
+              category={skill.category}
+              proficiency={skill.proficiency}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights Sections -->
+    <HighlightSection
+      title="Featured Projects"
+      description="Some of my best work in robotics and AI systems"
+      linkText="View All Projects"
+      linkUrl="/projects"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {topProjects.map((project) => (
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            technologies={project.technologies}
+            github={project.github}
+            demo={project.demo}
+          />
+        ))}
+      </div>
+    </HighlightSection>
+
+    <HighlightSection
+      title="Recent Publications"
+      description="My research contributions in robotics and artificial intelligence"
+      linkText="View All Papers"
+      linkUrl="/papers"
+      bgClass="bg-neutral-100 dark:bg-neutral-800/50"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {topPapers.map((paper) => (
+          <PaperCard
+            title={paper.title}
+            journal={paper.journal}
+            date={paper.date}
+            authors={paper.authors}
+            doi={paper.doi}
+            pdf={paper.pdf}
+          />
+        ))}
+      </div>
+    </HighlightSection>
+
+    <HighlightSection
+      title="Awards & Recognition"
+      description="Honors received for my work and contributions"
+      linkText="View All Awards"
+      linkUrl="/awards"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {topAwards.map((award) => (
+          <AwardCard
+            title={award.title}
+            organization={award.organization}
+            date={award.date}
+            description={award.description}
+            certificate={award.certificate}
+          />
+        ))}
+      </div>
+    </HighlightSection>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-16 md:py-24 bg-neutral-100 dark:bg-neutral-800/50 rounded-3xl my-16">
+      <div class="w-full max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3 text-center">Get In Touch</h2>
+        <p class="text-neutral-600 dark:text-neutral-400 text-center mb-10 max-w-xl mx-auto">
+          Have a project idea or research proposal? Feel free to reach out to discuss how we can work together.
+        </p>
+        
+        <ContactForm />
+      </div>
+    </section>
+  </div>
+</Layout>

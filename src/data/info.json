@@ -1,0 +1,149 @@
+{
+  "name": "Carlos Ramírez",
+  "title": "Mechatronics Engineer | Robotics & AI Specialist",
+  "bio": "I'm a mechatronics engineer specializing in robotics, computer vision, and artificial intelligence. My work focuses on creating advanced autonomous systems and implementing cutting-edge AI solutions for complex robotics challenges.",
+  "profileImage": "/assets/profile.svg",
+  "email": "contact@example.com",
+  "phone": "+1 (555) 123-4567",
+  "location": "Mexico City, Mexico",
+  "cvDownloadLink": "/assets/cv.pdf",
+  "socialLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/",
+      "icon": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/",
+      "icon": "twitter"
+    },
+    {
+      "name": "ResearchGate",
+      "url": "https://researchgate.net/",
+      "icon": "book-open"
+    }
+  ],
+  "education": [
+    {
+      "institution": "National Autonomous University of Mexico (UNAM)",
+      "degree": "Ph.D. in Robotics & Artificial Intelligence",
+      "years": "2018 - 2022",
+      "description": "Research focused on advanced perception systems for autonomous robots in unstructured environments."
+    },
+    {
+      "institution": "Tecnológico de Monterrey",
+      "degree": "MSc in Mechatronics Engineering",
+      "years": "2016 - 2018",
+      "description": "Specialization in control systems and computer vision for robotic applications."
+    },
+    {
+      "institution": "Tecnológico de Monterrey",
+      "degree": "BSc in Mechatronics Engineering",
+      "years": "2012 - 2016",
+      "description": "Graduated with honors. Focus on robotics and automation systems."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Robotics Innovation Lab",
+      "position": "Lead Robotics Engineer",
+      "years": "2022 - Present",
+      "responsibilities": [
+        "Leading a team of engineers in developing autonomous navigation systems for industrial robots",
+        "Designing and implementing computer vision algorithms for object recognition and tracking",
+        "Integrating machine learning models with robotic control systems",
+        "Managing R&D projects from concept to deployment"
+      ]
+    },
+    {
+      "company": "Tech Solutions Inc.",
+      "position": "Mechatronics Engineer",
+      "years": "2019 - 2022",
+      "responsibilities": [
+        "Developed ROS-based solutions for autonomous mobile robots",
+        "Implemented SLAM algorithms for indoor mapping and navigation",
+        "Created computer vision systems for quality control in manufacturing",
+        "Collaborated with cross-functional teams to deliver end-to-end robotic solutions"
+      ]
+    },
+    {
+      "company": "National Robotics Research Center",
+      "position": "Research Assistant",
+      "years": "2016 - 2019",
+      "responsibilities": [
+        "Conducted research on robot learning from demonstration",
+        "Developed machine learning models for robot motion planning",
+        "Published research papers in leading robotics and AI conferences",
+        "Assisted in grant writing and project management activities"
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "name": "Robotics & Control",
+      "skills": ["ROS/ROS2", "Robot Kinematics", "Path Planning", "SLAM", "Control Systems", "Sensor Fusion", "Motion Planning", "Microcontrollers"]
+    },
+    {
+      "name": "AI & Machine Learning",
+      "skills": ["Deep Learning", "Computer Vision", "Reinforcement Learning", "Neural Networks", "TensorFlow", "PyTorch", "Natural Language Processing", "GANs"]
+    },
+    {
+      "name": "Programming",
+      "skills": ["Python", "C++", "MATLAB", "JavaScript", "ROS", "OpenCV", "Git", "Docker", "Linux"]
+    },
+    {
+      "name": "Hardware & Electronics",
+      "skills": ["PCB Design", "Arduino", "Raspberry Pi", "Sensor Integration", "FPGA", "Embedded Systems", "Circuit Design", "3D Printing"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ROS Developer Advanced Certification",
+      "issuer": "The Construct Sim",
+      "date": "2022"
+    },
+    {
+      "name": "TensorFlow Developer Certificate",
+      "issuer": "Google",
+      "date": "2021"
+    },
+    {
+      "name": "Computer Vision Specialist",
+      "issuer": "NVIDIA Deep Learning Institute",
+      "date": "2020"
+    },
+    {
+      "name": "Certified Mechatronics Professional",
+      "issuer": "International Society of Automation",
+      "date": "2019"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Spanish",
+      "level": "Native",
+      "proficiency": 100
+    },
+    {
+      "name": "English",
+      "level": "Fluent",
+      "proficiency": 95
+    },
+    {
+      "name": "German",
+      "level": "Intermediate",
+      "proficiency": 70
+    },
+    {
+      "name": "French",
+      "level": "Basic",
+      "proficiency": 40
+    }
+  ]
+}

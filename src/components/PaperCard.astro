@@ -1,0 +1,88 @@
+---
+export interface Props {
+  title: string;
+  journal: string;
+  date: string;
+  authors: string[];
+  doi?: string;
+  pdf?: string;
+}
+
+const { title, journal, date, authors, doi, pdf } = Astro.props;
+---
+
+<div class="group bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl dark:shadow-neutral-900/20 dark:hover:shadow-cyan-900/20 transition duration-300 h-full flex flex-col transform hover:-translate-y-1">
+  <!-- Paper Info -->
+  <div class="p-6 flex-grow flex flex-col">
+    <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition">{title}</h3>
+    
+    <div class="mb-3">
+      <p class="text-neutral-800 dark:text-neutral-200 font-medium">{journal}</p>
+      <p class="text-neutral-600 dark:text-neutral-400 text-sm">{date}</p>
+    </div>
+    
+    <p class="text-neutral-600 dark:text-neutral-400 text-sm italic mb-4 flex-grow">
+      {authors.join(', ')}
+    </p>
+    
+    <!-- Actions -->
+    <div class="flex flex-wrap gap-3 mt-auto">
+      {doi && (
+        <a 
+          href={`https://doi.org/${doi}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-sm text-neutral-700 dark:text-neutral-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+        >
+          <i data-feather="link" class="w-4 h-4 mr-1"></i>
+          DOI: {doi}
+        </a>
+      )}
+      
+      {pdf && (
+        <a 
+          href={pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-sm text-neutral-700 dark:text-neutral-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+        >
+          <i data-feather="file-text" class="w-4 h-4 mr-1"></i>
+          Download PDF
+        </a>
+      )}
+    </div>
+  </div>
+  
+  <!-- Paper footer -->
+  <div class="px-6 py-3 bg-neutral-50 dark:bg-neutral-800/50 border-t border-neutral-100 dark:border-neutral-700">
+    <div class="flex justify-between items-center">
+      <span class="text-xs text-neutral-500 dark:text-neutral-500">Academic Publication</span>
+      
+      <div class="flex gap-2">
+        {doi && (
+          <a 
+            href={`https://doi.org/${doi}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+            aria-label="View on DOI"
+          >
+            <i data-feather="external-link" class="w-4 h-4"></i>
+          </a>
+        )}
+        
+        {pdf && (
+          <a 
+            href={pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+            aria-label="Download PDF"
+          >
+            <i data-feather="download" class="w-4 h-4"></i>
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</div>

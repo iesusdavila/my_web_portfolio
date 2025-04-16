@@ -1,0 +1,82 @@
+---
+import DarkModeToggle from './DarkModeToggle.astro';
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md shadow-sm dark:shadow-neutral-800/10">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img src="/assets/logo.svg" alt="Logo" class="h-10 w-10 mr-3" />
+        <span class="font-bold text-xl">MechaRobotics</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-1">
+        <a href="/" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home</a>
+        <a href="/projects" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Projects</a>
+        <a href="/papers" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Papers</a>
+        <a href="/awards" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Awards</a>
+        <a href="/cv" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">CV</a>
+        <a href="/contact" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Contact</a>
+        <DarkModeToggle />
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center md:hidden">
+        <DarkModeToggle />
+        <button 
+          id="mobile-menu-button" 
+          class="ml-2 p-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          aria-label="Toggle Menu"
+        >
+          <i data-feather="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation (Hidden by default) -->
+    <nav id="mobile-menu" class="hidden pt-4 pb-2 md:hidden">
+      <div class="flex flex-col space-y-2">
+        <a href="/" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home</a>
+        <a href="/projects" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Projects</a>
+        <a href="/papers" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Papers</a>
+        <a href="/awards" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Awards</a>
+        <a href="/cv" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">CV</a>
+        <a href="/contact" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      
+      // Toggle between menu and x icon
+      const icon = mobileMenuButton.querySelector('i');
+      if (icon.getAttribute('data-feather') === 'menu') {
+        icon.setAttribute('data-feather', 'x');
+      } else {
+        icon.setAttribute('data-feather', 'menu');
+      }
+      feather.replace();
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        icon.setAttribute('data-feather', 'menu');
+        feather.replace();
+      });
+    });
+  });
+</script>

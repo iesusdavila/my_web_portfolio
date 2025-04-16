@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AwardCard from '../components/AwardCard.astro';
+import awards from '../data/awards.json';
+---
+
+<Layout title="Awards & Recognition | Mechatronics Engineer Portfolio">
+  <div class="container mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Awards & Recognition</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+        Honors and recognition received for contributions to robotics, AI, and mechatronics.
+      </p>
+    </header>
+
+    <!-- Awards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {awards.map((award) => (
+        <AwardCard
+          title={award.title}
+          organization={award.organization}
+          date={award.date}
+          description={award.description}
+          certificate={award.certificate}
+        />
+      ))}
+    </div>
+
+    <!-- If no awards are available -->
+    {awards.length === 0 && (
+      <div class="text-center py-16">
+        <div class="text-5xl mb-4">🏆</div>
+        <h3 class="text-2xl font-bold mb-2">No awards yet</h3>
+        <p class="text-neutral-600 dark:text-neutral-400">
+          Check back soon for updates on awards and recognition.
+        </p>
+      </div>
+    )}
+  </div>
+</Layout>

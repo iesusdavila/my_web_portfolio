@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Outstanding Innovation in Robotics",
+    "organization": "International Robotics Association",
+    "date": "September 2023",
+    "description": "Awarded for developing a novel approach to robot learning from demonstration that significantly reduces training time while improving task performance.",
+    "certificate": "/assets/certificates/award1.pdf"
+  },
+  {
+    "title": "Best Paper Award",
+    "organization": "IEEE International Conference on Robotics and Automation (ICRA)",
+    "date": "May 2023",
+    "description": "Recognized for the paper 'Deep Reinforcement Learning for Autonomous Mobile Robot Navigation in Dynamic Environments' as the most innovative research contribution.",
+    "certificate": "/assets/certificates/award2.pdf"
+  },
+  {
+    "title": "Young Researcher of the Year",
+    "organization": "National Council for Science and Technology",
+    "date": "December 2022",
+    "description": "National recognition for outstanding contributions to the field of robotics and artificial intelligence by a researcher under 35 years of age.",
+    "certificate": "/assets/certificates/award3.pdf"
+  },
+  {
+    "title": "Technology Innovation Grant",
+    "organization": "Global Robotics Foundation",
+    "date": "August 2022",
+    "description": "Competitive grant awarded to fund research on autonomous robotic systems for applications in disaster response scenarios.",
+    "certificate": "/assets/certificates/award4.pdf"
+  },
+  {
+    "title": "Academic Excellence in Engineering",
+    "organization": "Tecnológico de Monterrey",
+    "date": "June 2022",
+    "description": "Recognition for outstanding academic achievements and contributions to the university's engineering research programs.",
+    "certificate": "/assets/certificates/award5.pdf"
+  },
+  {
+    "title": "Industry Impact Award",
+    "organization": "Association for the Advancement of Artificial Intelligence",
+    "date": "February 2022",
+    "description": "Awarded for developing AI algorithms that have been successfully implemented in industrial robotics applications with measurable productivity improvements.",
+    "certificate": "/assets/certificates/award6.pdf"
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "name": "Juan Martínez",
+  "title": "Mechatronics Engineer",
+  "specialization": "Robotics & AI Specialist",
+  "about": "I'm a Mechatronics Engineer with extensive expertise in robotics, computer vision, and artificial intelligence. My work focuses on developing innovative solutions that bridge the gap between mechanical systems and intelligent software.",
+  "location": "Mexico City, Mexico",
+  "email": "contact@juanmartinez.com",
+  "phone": "+52 555 123 4567",
+  "social": {
+    "linkedin": "https://linkedin.com/in/juan-martinez",
+    "github": "https://github.com/juan-martinez",
+    "twitter": "https://twitter.com/juan_martinez",
+    "youtube": "https://youtube.com/c/juanmartinez"
+  },
+  "education": [
+    {
+      "degree": "Ph.D. in Robotics",
+      "institution": "Stanford University",
+      "year": "2018-2022"
+    },
+    {
+      "degree": "M.Sc. in Mechatronics Engineering",
+      "institution": "MIT",
+      "year": "2016-2018"
+    },
+    {
+      "degree": "B.Eng. in Mechatronics Engineering",
+      "institution": "Tecnológico de Monterrey",
+      "year": "2012-2016"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Lead Robotics Engineer",
+      "company": "Boston Dynamics",
+      "period": "2022-Present",
+      "description": "Leading a team of engineers in developing next-generation robotic systems with advanced mobility and perception capabilities."
+    },
+    {
+      "title": "AI Research Scientist",
+      "company": "Google Brain",
+      "period": "2020-2022",
+      "description": "Conducted research on deep reinforcement learning for robotic control and collaborated on developing robust perception systems."
+    },
+    {
+      "title": "Robotics Engineer",
+      "company": "NASA Jet Propulsion Laboratory",
+      "period": "2018-2020",
+      "description": "Contributed to the development of autonomous rover systems and designed control algorithms for planetary exploration robots."
+    }
+  ],
+  "certifications": [
+    {
+      "name": "TensorFlow Developer Certificate",
+      "issuer": "Google",
+      "year": "2021"
+    },
+    {
+      "name": "ROS Industrial Developer",
+      "issuer": "ROS Industrial Consortium",
+      "year": "2020"
+    },
+    {
+      "name": "Advanced Computer Vision Specialist",
+      "issuer": "OpenCV.org",
+      "year": "2019"
+    }
+  ]
+}

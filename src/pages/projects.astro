@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import projects from '../data/projects.json';
+---
+
+<Layout title="Projects | Mechatronics Engineer Portfolio">
+  <div class="container mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+        A collection of robotics, AI, and mechatronics projects showcasing my expertise and innovation.
+      </p>
+    </header>
+
+    <!-- Filter Options -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <button class="filter-btn active px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="all">
+        All
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="robotics">
+        Robotics
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="ai">
+        AI & Machine Learning
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="computer-vision">
+        Computer Vision
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="ros">
+        ROS/ROS2
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <div class="project-card" data-categories={project.categories.join(',')}>
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            technologies={project.technologies}
+            github={project.github}
+            demo={project.demo}
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Empty state (hidden by default) -->
+    <div id="no-results" class="hidden text-center py-16">
+      <div class="text-5xl mb-4">🤖</div>
+      <h3 class="text-2xl font-bold mb-2">No projects found</h3>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        No projects match your current filter. Try selecting a different category.
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Filter functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const noResults = document.getElementById('no-results');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-cyan-600', 'dark:bg-cyan-700', 'text-white'));
+        
+        // Add active class to clicked button
+        button.classList.add('active', 'bg-cyan-600', 'dark:bg-cyan-700', 'text-white');
+        
+        const filter = button.getAttribute('data-filter');
+        
+        let visibleCount = 0;
+        
+        // Filter projects
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-categories').split(',');
+          
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = 'block';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Show/hide empty state
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,40 @@
+---
+export interface Props {
+  name: string;
+  icon: string;
+  category: string;
+  proficiency: number;
+}
+
+const { name, icon, category, proficiency } = Astro.props;
+
+// Determine color class based on category
+let colorClass = '';
+switch (category) {
+  case 'robotics':
+    colorClass = 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400';
+    break;
+  case 'ai':
+    colorClass = 'bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400';
+    break;
+  case 'software':
+    colorClass = 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400';
+    break;
+  case 'hardware':
+    colorClass = 'bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400';
+    break;
+  default:
+    colorClass = 'bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400';
+}
+---
+
+<div class={`group p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 hover:border-cyan-300 dark:hover:border-cyan-700 transition-colors ${colorClass}`}>
+  <div class="flex flex-col items-center text-center">
+    <i data-feather={icon} class="w-8 h-8 mb-3"></i>
+    <h4 class="font-medium mb-2">{name}</h4>
+    
+    <div class="w-full h-1.5 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
+      <div class="h-full rounded-full" style={`width: ${proficiency}%; background-color: currentColor;`}></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+---
+export interface Props {
+  name: string;
+  title: string;
+  bio: string;
+  image: string;
+  socialLinks: {
+    name: string;
+    url: string;
+    icon: string;
+  }[];
+}
+
+const { name, title, bio, image, socialLinks } = Astro.props;
+---
+
+<section class="pt-16 md:pt-24 pb-12 md:pb-20">
+  <div class="w-full max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+      <!-- Image -->
+      <div class="w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden bg-neutral-200 dark:bg-neutral-700 flex-shrink-0 relative">
+        <img 
+          src={image} 
+          alt={name} 
+          class="w-full h-full object-cover"
+        />
+        
+        <!-- Animated circuit pattern around image -->
+        <div class="absolute -inset-2 border-2 border-dashed border-cyan-400/40 dark:border-cyan-500/30 rounded-full animate-spin-slow"></div>
+        <div class="absolute -inset-4 border-2 border-dashed border-cyan-400/20 dark:border-cyan-500/20 rounded-full animate-spin-slow-reverse"></div>
+      </div>
+      
+      <!-- Content -->
+      <div class="text-center md:text-left">
+        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-400 text-sm font-medium mb-4">
+          <i data-feather="cpu" class="w-4 h-4 mr-2"></i>
+          <span>Mechatronics Engineer</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          Hello, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-400">{name}</span>
+        </h1>
+        
+        <h2 class="text-2xl md:text-3xl font-medium text-neutral-700 dark:text-neutral-300 mb-6">
+          {title}
+        </h2>
+        
+        <p class="text-neutral-600 dark:text-neutral-400 text-lg mb-8 max-w-2xl">
+          {bio}
+        </p>
+        
+        <!-- Social Links -->
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+          {socialLinks.map((link) => (
+            <a 
+              href={link.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="flex items-center p-3 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/30 text-neutral-800 dark:text-neutral-200 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
+              aria-label={link.name}
+            >
+              <i data-feather={link.icon} class="w-5 h-5"></i>
+            </a>
+          ))}
+          
+          <a 
+            href="/contact" 
+            class="flex items-center px-6 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 text-white transition-colors"
+          >
+            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+            <span>Contact Me</span>
+          </a>
+          
+          <a 
+            href="/cv" 
+            class="flex items-center px-6 py-3 rounded-lg bg-neutral-800 hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-600 text-white transition-colors"
+          >
+            <i data-feather="file-text" class="w-4 h-4 mr-2"></i>
+            <span>View CV</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Floating tech elements -->
+    <div class="mt-16 md:mt-24 flex justify-center">
+      <div class="relative w-full max-w-4xl h-24">
+        <div class="absolute top-0 left-1/4 transform -translate-x-1/2 bg-neutral-100 dark:bg-neutral-800 rounded-xl p-4 shadow-lg animate-float-1">
+          <i data-feather="cpu" class="w-8 h-8 text-cyan-600 dark:text-cyan-400"></i>
+        </div>
+        <div class="absolute top-8 left-1/2 transform -translate-x-1/2 bg-neutral-100 dark:bg-neutral-800 rounded-xl p-4 shadow-lg animate-float-2">
+          <i data-feather="code" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+        </div>
+        <div class="absolute top-0 left-3/4 transform -translate-x-1/2 bg-neutral-100 dark:bg-neutral-800 rounded-xl p-4 shadow-lg animate-float-3">
+          <i data-feather="database" class="w-8 h-8 text-purple-600 dark:text-purple-400"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float-1 {
+    0%, 100% { transform: translateY(0) translateX(-50%); }
+    50% { transform: translateY(-10px) translateX(-50%); }
+  }
+  
+  @keyframes float-2 {
+    0%, 100% { transform: translateY(0) translateX(-50%); }
+    50% { transform: translateY(-15px) translateX(-50%); }
+  }
+  
+  @keyframes float-3 {
+    0%, 100% { transform: translateY(0) translateX(-50%); }
+    50% { transform: translateY(-8px) translateX(-50%); }
+  }
+  
+  .animate-float-1 {
+    animation: float-1 6s ease-in-out infinite;
+  }
+  
+  .animate-float-2 {
+    animation: float-2 5s ease-in-out infinite;
+  }
+  
+  .animate-float-3 {
+    animation: float-3 7s ease-in-out infinite;
+  }
+  
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes spin-slow-reverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+  
+  .animate-spin-slow-reverse {
+    animation: spin-slow-reverse 30s linear infinite;
+  }
+</style>
