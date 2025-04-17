@@ -1,74 +1,11 @@
 [
   {
-    "title": "Deep Reinforcement Learning for Autonomous Mobile Robot Navigation in Dynamic Environments",
-    "journal": "IEEE Transactions on Robotics",
-    "date": "June 2023",
-    "authors": ["Carlos Ramírez", "John Smith", "Maria Garcia"],
-    "doi": "10.1109/TRO.2023.1234567",
+    "title": "Software Architecture and Simulation Interface for Autonomous Underwater Vehicles",
+    "journal": "IEEE Robotics and Automation Systems",
+    "date": "October 2024",
+    "authors": ["Iesus Davila", "Alfredo Valenzuela", "Ricardo Ortiz", "Jongseong Choi", "Francisco Yumbla"],
+    "doi": "https://ieeexplore.ieee.org/document/10746001",
     "pdf": "/assets/papers/paper1.pdf",
     "categories": ["robotics", "ai"]
-  },
-  {
-    "title": "Real-time Semantic Segmentation for Robot Perception Using Efficient Neural Networks",
-    "journal": "International Journal of Computer Vision",
-    "date": "March 2023",
-    "authors": ["Carlos Ramírez", "Alex Johnson"],
-    "doi": "10.1007/s11263-023-01234-5",
-    "pdf": "/assets/papers/paper2.pdf",
-    "categories": ["computer-vision", "ai"]
-  },
-  {
-    "title": "A Novel Approach to Human-Robot Collaborative Assembly Using Augmented Reality",
-    "journal": "Robotics and Computer-Integrated Manufacturing",
-    "date": "November 2022",
-    "authors": ["Carlos Ramírez", "Sarah Williams", "David Kim"],
-    "doi": "10.1016/j.rcim.2022.56789",
-    "pdf": "/assets/papers/paper3.pdf",
-    "categories": ["robotics", "computer-vision"]
-  },
-  {
-    "title": "Sensor Fusion Techniques for Robust Robot Localization in Industrial Environments",
-    "journal": "Sensors",
-    "date": "August 2022",
-    "authors": ["Carlos Ramírez", "Michael Brown"],
-    "doi": "10.3390/s22081234",
-    "pdf": "/assets/papers/paper4.pdf",
-    "categories": ["robotics"]
-  },
-  {
-    "title": "Learning from Demonstration in Robotic Manipulation Tasks: A Comparative Study",
-    "journal": "International Conference on Robotics and Automation (ICRA)",
-    "date": "May 2022",
-    "authors": ["Carlos Ramírez", "Jennifer Lee", "Robert Miller"],
-    "doi": "10.1109/ICRA.2022.9876543",
-    "pdf": "/assets/papers/paper5.pdf",
-    "categories": ["robotics", "ai"]
-  },
-  {
-    "title": "Efficient Visual SLAM for Autonomous Mobile Robots in GPS-Denied Environments",
-    "journal": "IEEE Robotics and Automation Letters",
-    "date": "January 2022",
-    "authors": ["Carlos Ramírez", "Thomas Wilson"],
-    "doi": "10.1109/LRA.2022.3456789",
-    "pdf": "/assets/papers/paper6.pdf",
-    "categories": ["computer-vision", "robotics"]
-  },
-  {
-    "title": "End-to-End Learning for Multi-Modal Robotic Control",
-    "journal": "Conference on Robot Learning (CoRL)",
-    "date": "October 2021",
-    "authors": ["Carlos Ramírez", "Patricia Chen", "Mark Davis"],
-    "doi": "10.48550/arXiv.2110.12345",
-    "pdf": "/assets/papers/paper7.pdf",
-    "categories": ["ai", "robotics"]
-  },
-  {
-    "title": "Adaptive Neural Control for Uncertain Robotic Systems",
-    "journal": "Neural Networks",
-    "date": "July 2021",
-    "authors": ["Carlos Ramírez", "Elena Rodriguez"],
-    "doi": "10.1016/j.neunet.2021.45678",
-    "pdf": "/assets/papers/paper8.pdf",
-    "categories": ["ai"]
   }
 ]

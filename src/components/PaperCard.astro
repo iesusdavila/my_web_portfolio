@@ -29,27 +29,16 @@ const { title, journal, date, authors, doi, pdf } = Astro.props;
     <div class="flex flex-wrap gap-3 mt-auto">
       {doi && (
         <a 
-          href={`https://doi.org/${doi}`}
+          href={`${doi}`}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center text-sm text-neutral-700 dark:text-neutral-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
         >
           <i data-feather="link" class="w-4 h-4 mr-1"></i>
-          DOI: {doi}
+          Link to IEEE
         </a>
       )}
       
-      {pdf && (
-        <a 
-          href={pdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center text-sm text-neutral-700 dark:text-neutral-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
-        >
-          <i data-feather="file-text" class="w-4 h-4 mr-1"></i>
-          Download PDF
-        </a>
-      )}
     </div>
   </div>
   
@@ -61,7 +50,7 @@ const { title, journal, date, authors, doi, pdf } = Astro.props;
       <div class="flex gap-2">
         {doi && (
           <a 
-            href={`https://doi.org/${doi}`}
+            href={`${doi}`}
             target="_blank"
             rel="noopener noreferrer"
             class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
@@ -71,17 +60,6 @@ const { title, journal, date, authors, doi, pdf } = Astro.props;
           </a>
         )}
         
-        {pdf && (
-          <a 
-            href={pdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-neutral-600 dark:text-neutral-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
-            aria-label="Download PDF"
-          >
-            <i data-feather="download" class="w-4 h-4"></i>
-          </a>
-        )}
       </div>
     </div>
   </div>
