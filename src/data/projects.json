@@ -1,78 +1,46 @@
 [
   {
-    "title": "Autonomous Delivery Robot",
-    "description": "A fully autonomous robot designed to navigate indoor environments and deliver items to specific locations.",
-    "image": "/assets/robot-pattern.svg",
-    "technologies": ["ROS2", "Computer Vision", "SLAM", "C++"],
-    "github": "https://github.com/username/autonomous-delivery-robot",
-    "demo": "https://example.com/robot-demo",
-    "categories": ["robotics", "computer-vision", "ros"]
+    "title": "Software Architecture Master-Slave",
+    "description": "Based on the use of UGVs and ROS2 Humble, applying software architecture techniques and robust design patterns. The results confirmed that, under the master-slave structure, the system completes all assigned tasks, even in case of failure of one or more robots.",
+    "image": "/assets/master_slave.png",
+    "technologies": ["ROS2", "Multi-robot", "SLAM", "Nav2", "Python"],
+    "github": "https://github.com/iesusdavila/master_slave_mrs",
+    "demo": "https://youtu.be/fS6GwS7P4-A",
+    "categories": ["robotics", "nav2", "ros"]
   },
   {
-    "title": "AI-Powered Robotic Arm",
-    "description": "A robotic arm that uses deep learning to identify and pick up objects of various shapes and sizes.",
-    "image": "/assets/robot-pattern.svg",
-    "technologies": ["PyTorch", "ROS", "Python", "Computer Vision"],
-    "github": "https://github.com/username/ai-robotic-arm",
-    "categories": ["robotics", "ai", "computer-vision", "ros"]
+    "title": "Multi Robot System",
+    "description": "Multi Robot System developed for ROS2 Humble, allows the easy incorporation of several robot models with little configuration. There is no limit on the number of robots, if you incorporate UGV you can provide your parameter file for autonomous navigation.",
+    "image": "/assets/multi_robot.png",
+    "technologies": ["ROS2", "Multi-robot", "Nav2", "Python"],
+    "github": "https://github.com/iesusdavila/multi_robot",
+    "demo": "https://youtu.be/fS6GwS7P4-A" ,
+    "categories": ["robotics", "nav2", "ros"]
   },
   {
-    "title": "Drone Navigation System",
-    "description": "A vision-based navigation system for drones that enables autonomous flight in GPS-denied environments.",
-    "image": "/assets/circuit-bg.svg",
-    "technologies": ["OpenCV", "Machine Learning", "C++", "Python"],
-    "github": "https://github.com/username/drone-navigation",
-    "demo": "https://example.com/drone-demo",
-    "categories": ["robotics", "computer-vision", "ai"]
+    "title": "AUV Max: Simulator for Autonomous Underwater Vehicles",
+    "description": "It focuses on the development of a submersible UAV, using advanced technologies in robotics, automatic control and machine vision. Developed with ROS2 Humble, Gazebo Garden 7 and Rviz2, this project represents a pioneering effort in the simulation and operation of autonomous underwater vehicles.",
+    "image": "/assets/auv_max.png",
+    "technologies": ["ROS2", "Computer Vision", "C++", "Python"],
+    "github": "https://github.com/RAMEL-ESPOL/UnderwaterVehicleSimulator",
+    "categories": ["robotics", "ros", "computer-vision", "ai"]
   },
   {
-    "title": "Human-Robot Interaction Framework",
-    "description": "A framework for natural interaction between humans and robots using gesture recognition and voice commands.",
-    "image": "/assets/robot-pattern.svg",
-    "technologies": ["TensorFlow", "NLP", "ROS", "Python"],
-    "github": "https://github.com/username/human-robot-interaction",
-    "categories": ["robotics", "ai", "ros"]
+    "title": "Follower Car",
+    "description": "Follower algorithm for TurtleBot3 and ROVER using only 2D LIDAR and traditional control techniques. The algorithm can be run on N robots, achieving a chain of follower robots. No machine vision or anything similar is used in the algorithm.",
+    "image": "/assets/follower_robot.png",
+    "technologies": ["ROS2", "Control", "C++", "Python"],
+    "github": "https://github.com/iesusdavila/follower_car/tree/humble-devel",
+    "demo": "https://youtu.be/71NROFKV50Q",
+    "categories": ["robotics", "ros"]
   },
   {
-    "title": "Smart Manufacturing Robot Cell",
-    "description": "An integrated robotic cell for smart manufacturing with real-time quality control and adaptive process optimization.",
-    "image": "/assets/circuit-bg.svg",
-    "technologies": ["ROS2", "Industrial Automation", "Computer Vision", "Machine Learning"],
-    "github": "https://github.com/username/smart-manufacturing",
+    "title": "KUKA Kr210 - Pick and Place",
+    "description": "It uses ROS Noetic and MoveIt for motion planning and OpenCV for real-time object detection based on color segmentation. The system ensures accurate trajectory execution and seamless communication between perception and control, enabling efficient and autonomous pick and place operations.",
+    "image": "/assets/pick_place.png",
+    "technologies": ["ROS2", "Industrial Automation", "Computer Vision", "MoveIt", "Python"],
+    "github": "https://github.com/iesusdavila/kuka_kr210-pick-place/tree/main",
+    "demo": "https://youtu.be/OrNDWy7UmwY",
     "categories": ["robotics", "computer-vision", "ai", "ros"]
-  },
-  {
-    "title": "Multi-Robot Coordination System",
-    "description": "A system that enables multiple robots to coordinate their actions and work together to accomplish complex tasks.",
-    "image": "/assets/robot-pattern.svg",
-    "technologies": ["ROS2", "Multi-agent Systems", "Python", "C++"],
-    "github": "https://github.com/username/multi-robot-coordination",
-    "demo": "https://example.com/multi-robot-demo",
-    "categories": ["robotics", "ai", "ros"]
-  },
-  {
-    "title": "Neural Network Control System",
-    "description": "A neural network-based control system for non-linear dynamic systems, applied to robotic manipulators.",
-    "image": "/assets/circuit-bg.svg",
-    "technologies": ["PyTorch", "Control Theory", "Python", "MATLAB"],
-    "github": "https://github.com/username/neural-control",
-    "categories": ["ai", "robotics"]
-  },
-  {
-    "title": "Autonomous Agriculture Robot",
-    "description": "An agricultural robot capable of autonomous navigation, crop monitoring, and selective harvesting.",
-    "image": "/assets/robot-pattern.svg",
-    "technologies": ["ROS", "Computer Vision", "Machine Learning", "Sensor Fusion"],
-    "github": "https://github.com/username/agri-robot",
-    "categories": ["robotics", "computer-vision", "ai", "ros"]
-  },
-  {
-    "title": "Real-time Object Detection System",
-    "description": "A high-performance object detection system optimized for embedded devices in robotics applications.",
-    "image": "/assets/circuit-bg.svg",
-    "technologies": ["TensorFlow Lite", "Computer Vision", "C++", "CUDA"],
-    "github": "https://github.com/username/realtime-detection",
-    "demo": "https://example.com/detection-demo",
-    "categories": ["computer-vision", "ai"]
   }
 ]
