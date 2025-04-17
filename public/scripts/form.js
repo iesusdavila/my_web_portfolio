@@ -20,17 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         // In a real implementation, you would send this data to a server
         // Here we're simulating an API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        //await new Promise(resolve => setTimeout(resolve, 1500));
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
         
         // Success message
-        formStatus.innerHTML = `
-          <div class="text-green-600 dark:text-green-400">
-            <p class="font-medium">Message sent successfully!</p>
-            <p class="text-sm">Thank you for reaching out. I'll get back to you as soon as possible.</p>
-          </div>
-        `;
-        formStatus.classList.remove('hidden', 'bg-red-100', 'dark:bg-red-900/20', 'text-red-800', 'dark:text-red-400');
-        formStatus.classList.add('bg-green-100', 'dark:bg-green-900/20', 'text-green-800', 'dark:text-green-400');
+        if (response.ok) {
+          formStatus.innerHTML = `
+            <div class="text-green-600 dark:text-green-400">
+              <p class="font-medium">Message sent successfully!</p>
+              <p class="text-sm">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+            </div>
+          `;
+          formStatus.classList.remove('hidden', 'bg-red-100', 'dark:bg-red-900/20', 'text-red-800', 'dark:text-red-400');
+          formStatus.classList.add('bg-green-100', 'dark:bg-green-900/20', 'text-green-800', 'dark:text-green-400');
+        }
         
         // Reset form
         contactForm.reset();
