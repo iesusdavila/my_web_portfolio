@@ -2,30 +2,30 @@
   "name": "Iesus Davila",
   "title": "Mechatronics Engineer | Robotics & AI Specialist",
   "bio": "I'm a mechatronics engineer specializing in robotics, computer vision, and artificial intelligence. My work focuses on creating advanced autonomous systems and implementing cutting-edge AI solutions for complex robotics challenges.",
-  "profileImage": "/assets/profile.svg",
-  "email": "contact@example.com",
-  "phone": "+1 (555) 123-4567",
-  "location": "Mexico City, Mexico",
-  "cvDownloadLink": "/assets/cv.pdf",
+  "profileImage": "/assets/iesus.jpg",
+  "email": "iesusdavila@gmail.com",
+  "phone": "+593 96 314 5136",
+  "location": "Guayaquil, Ecuador",
+  "cvDownloadLink": "/assets/CV_EN.pdf",
   "socialLinks": [
     {
       "name": "GitHub",
-      "url": "https://github.com/",
+      "url": "https://github.com/iesusdavila",
       "icon": "github"
     },
     {
       "name": "LinkedIn",
-      "url": "https://linkedin.com/in/",
+      "url": "https://www.linkedin.com/in/iesusdavila/",
       "icon": "linkedin"
     },
     {
       "name": "Twitter",
-      "url": "https://twitter.com/",
+      "url": "https://twitter.com/iesus_davila",
       "icon": "twitter"
     },
     {
       "name": "ResearchGate",
-      "url": "https://researchgate.net/",
+      "url": "https://www.researchgate.net/profile/Iesus-Davila",
       "icon": "book-open"
     }
   ],
