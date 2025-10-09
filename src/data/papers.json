@@ -1,19 +1,19 @@
 [
   {
-    "title": "Software Architecture and Simulation Interface for Autonomous Underwater Vehicles",
-    "journal": "IEEE Robotics and Automation Systems",
-    "date": "October 2024",
-    "authors": ["Iesus Davila", "Alfredo Valenzuela", "Ricardo Ortiz", "Jongseong Choi", "Francisco Yumbla"],
-    "doi": "https://ieeexplore.ieee.org/document/10746001",
-    "pdf": "/assets/papers/paper1.pdf",
-    "categories": ["robotics", "ai"]
-  },
-  {
     "title": " Development of a Multi-Platform AI-Based Software Interface for the Accompaniment of Children",
     "journal": "MDPI Multimodal Technologies and Interaction Journal",
     "date": "August 2025",
     "authors": ["Isaac Leon", "Camila Reyes", "Iesus Davila", "Bryan Puruncajas", "Dennys Paillacho", "Nayeth Solorzano", "Marcelo Fajardo-Pruna", "Hyungpil Moon, Francisco Yumbla"],
     "doi": "https://www.mdpi.com/2414-4088/9/9/88",
+    "pdf": "/assets/papers/paper1.pdf",
+    "categories": ["robotics", "ai"]
+  },
+  {
+    "title": "Software Architecture and Simulation Interface for Autonomous Underwater Vehicles",
+    "journal": "IEEE Robotics and Automation Systems",
+    "date": "October 2024",
+    "authors": ["Iesus Davila", "Alfredo Valenzuela", "Ricardo Ortiz", "Jongseong Choi", "Francisco Yumbla"],
+    "doi": "https://ieeexplore.ieee.org/document/10746001",
     "pdf": "/assets/papers/paper1.pdf",
     "categories": ["robotics", "ai"]
   }
