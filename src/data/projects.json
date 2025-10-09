@@ -1,12 +1,20 @@
 [
   {
+    "title": "JobLens - AI-Powered CV Analysis & Enhancement Tool",
+    "description": "Intelligent CV analysis platform leveraging LangChain, FAISS vector databases, and advanced language models to provide comprehensive resume feedback. Analyzes CV structure, content quality, and job compatibility to help job seekers optimize their resumes for better career opportunities.",
+    "image": "/assets/joblens.png",
+    "technologies": ["AI Agents", "LangChain", "LangGraph", "FAISS", "Python"],
+    "github": "https://github.com/iesusdavila/JobLens",
+    "categories": ["llm", "agents", "langchain", "langgraph"]
+  },
+  {
     "title": "Software Architecture Master-Slave",
     "description": "Based on the use of UGVs and ROS2 Humble, applying software architecture techniques and robust design patterns. The results confirmed that, under the master-slave structure, the system completes all assigned tasks, even in case of failure of one or more robots.",
     "image": "/assets/master_slave.png",
     "technologies": ["ROS2", "Multi-robot", "SLAM", "Nav2", "Python"],
     "github": "https://github.com/iesusdavila/master_slave_mrs",
     "demo": "https://youtu.be/fS6GwS7P4-A",
-    "categories": ["robotics", "nav2", "ros"]
+    "categories": ["nav2", "ros"]
   },
   {
     "title": "Multi Robot System",
@@ -15,7 +23,7 @@
     "technologies": ["ROS2", "Multi-robot", "Nav2", "Python"],
     "github": "https://github.com/iesusdavila/multi_robot",
     "demo": "https://youtu.be/fS6GwS7P4-A" ,
-    "categories": ["robotics", "nav2", "ros"]
+    "categories": ["nav2", "ros"]
   },
   {
     "title": "AUV Max: Simulator for Autonomous Underwater Vehicles",
@@ -23,7 +31,7 @@
     "image": "/assets/auv_max.png",
     "technologies": ["ROS2", "Computer Vision", "C++", "Python"],
     "github": "https://github.com/RAMEL-ESPOL/UnderwaterVehicleSimulator",
-    "categories": ["robotics", "ros", "computer-vision", "ai"]
+    "categories": ["ros", "computer-vision", "ai"]
   },
   {
     "title": "Follower Car",
@@ -32,7 +40,7 @@
     "technologies": ["ROS2", "Control", "C++", "Python"],
     "github": "https://github.com/iesusdavila/follower_car/tree/humble-devel",
     "demo": "https://youtu.be/71NROFKV50Q",
-    "categories": ["robotics", "ros"]
+    "categories": ["ros"]
   },
   {
     "title": "KUKA Kr210 - Pick and Place",
@@ -41,6 +49,6 @@
     "technologies": ["ROS2", "Industrial Automation", "Computer Vision", "MoveIt", "Python"],
     "github": "https://github.com/iesusdavila/kuka_kr210-pick-place/tree/main",
     "demo": "https://youtu.be/OrNDWy7UmwY",
-    "categories": ["robotics", "computer-vision", "ai", "ros"]
+    "categories": ["computer-vision", "ai", "ros"]
   }
 ]
