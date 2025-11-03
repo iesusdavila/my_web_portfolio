@@ -1,7 +1,7 @@
 {
   "name": "Iesus Davila",
   "title": "Mechatronics Engineer | AI & Robotics Specialist",
-  "bio": "I'm a mechatronics engineer specializing in robotics, computer vision, and artificial intelligence. My work focuses on creating advanced autonomous systems and implementing cutting-edge AI solutions for complex robotics challenges.",
+  "bio": "I'm a mechatronics engineer specializing in computer vision, artificial intelligence, and robotics. My work focuses on creating advanced autonomous systems and implementing cutting-edge AI solutions for complex challenges.",
   "profileImage": "/assets/iesus.jpg",
   "email": "iesusdavila@gmail.com",
   "phone": "+593 96 314 5136",
@@ -34,14 +34,24 @@
       "degree": "Mechatronics Engineering",
       "institution": "ESPOL",
       "year": "2024",
-      "description": "Focus on Robotics and Deep Learning."
+      "description": "Focus on Deep Learning and Robotics."
     }
   ],
   "experience": [
     {
+      "position": "AI Engineer",
+      "company": "TIA S.A.",
+      "years": "August 2025 - Present",
+      "responsibilities": [
+        "Development of AI models for computer vision",
+        "Implementation of deep learning algorithms for image and video analysis",
+        "Collaboration with cross-functional teams to integrate AI solutions into products"
+      ]
+    },
+    {
       "position": "Robotics and AI Engineer",
       "company": "CEDIA",
-      "years": "February 2024-Present",
+      "years": "February 2025 - November 2025",
       "responsibilities": [
         "Development of a half-body humanoid for patient care in hospitals.",
         "Development of Artificial Vision, LLM and trajectory planning algorithms for the execution of functionalities.",
