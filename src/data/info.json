@@ -6,7 +6,7 @@
   "email": "iesusdavila@gmail.com",
   "phone": "+593 96 314 5136",
   "location": "Guayaquil, Ecuador",
-  "cvDownloadLink": "/assets/CV_EN.pdf",
+  "cvDownloadLink": "/assets/CV_IA_EN.pdf",
   "socialLinks": [
     {
       "name": "GitHub",
@@ -39,9 +39,19 @@
   ],
   "experience": [
     {
+      "position": "Digital & Insights Professional",
+      "company": "Cerveceria Nacional.",
+      "years": "August 2026 - Present",
+      "responsibilities": [
+        "Development computer vision models using embeddings models for product recognition.",
+        "Creation agents using LLMs for data analysis and report generation.",
+        "Implementation of AI solutions for process optimization and decision-making."
+      ]
+    },
+    {
       "position": "AI Engineer",
       "company": "TIA S.A.",
-      "years": "August 2025 - Present",
+      "years": "August 2025 - August 2026",
       "responsibilities": [
         "Development of AI models for computer vision",
         "Implementation of deep learning algorithms for image and video analysis",
@@ -81,12 +91,12 @@
   ],
   "skillCategories": [
     {
-      "name": "Robotics",
-      "skills": ["ROS/ROS2", "ROS2 Control", "Navigation2", "MoveIt2", "Control Systems", "Gazebo"]
-    },
-    {
       "name": "AI & Machine Learning",
       "skills": ["Deep Learning", "Computer Vision", "TensorFlow", "PyTorch", "OpenCV", "Large Language Models", "Llama.cpp", "Ollama"]
+    },
+    {
+      "name": "Robotics",
+      "skills": ["ROS/ROS2", "ROS2 Control", "Navigation2", "MoveIt2", "Control Systems", "Gazebo"]
     },
     {
       "name": "Programming",
