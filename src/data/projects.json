@@ -10,7 +10,7 @@
   {
     "title": "FastViT from Scratch - Weather Classification",
     "description": "PyTorch reimplementation of Apple's FastViT (ICCV 2023), trained from random initialization on 11 weather classes. Reaches 89.2% test accuracy (0.992 macro ROC-AUC), and structural reparameterization folds every multi-branch block into a single conv for 1.76x faster inference on GPU with identical outputs. Parameter counts of all 7 variants match the timm reference.",
-    "image": "/assets/test_predictions.png",
+    "image": "/assets/test_predictions.jpg",
     "technologies": ["Vision Transformer", "FastViT", "PyTorch", "Paper Implementation"],
     "github": "https://github.com/iesusdavila/weather_vit",
     "categories": ["computer-vision", "ai"]
