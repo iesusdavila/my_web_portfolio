@@ -1,5 +1,46 @@
 [
   {
+    "title": "Fashion Catalog VQA - Vision-Language Model",
+    "description": "Vision-language model (Qwen2-VL-2B fine-tuned with LoRA) that looks at a fashion product photo and answers in catalog language: color, article type, category, gender, usage, season and a one-line description. Raises exact-match accuracy from 52% (zero-shot) to 90% on held-out products, and includes an inference toolkit for product sheets, top-k confidence, listing audits and batch auto-tagging on a single T4 GPU.",
+    "image": "/assets/demo_product.png",
+    "technologies": ["VLM", "Qwen2-VL", "LoRA", "PyTorch", "Hugging Face"],
+    "github": "https://github.com/iesusdavila/fashion-catalog-vqa",
+    "categories": ["computer-vision", "llm", "ai"]
+  },
+  {
+    "title": "FastViT from Scratch - Weather Classification",
+    "description": "PyTorch reimplementation of Apple's FastViT (ICCV 2023), trained from random initialization on 11 weather classes. Reaches 89.2% test accuracy (0.992 macro ROC-AUC), and structural reparameterization folds every multi-branch block into a single conv for 1.76x faster inference on GPU with identical outputs. Parameter counts of all 7 variants match the timm reference.",
+    "image": "/assets/test_predictions.png",
+    "technologies": ["Vision Transformer", "FastViT", "PyTorch", "Paper Implementation"],
+    "github": "https://github.com/iesusdavila/weather_vit",
+    "categories": ["computer-vision", "ai"]
+  },
+  {
+    "title": "Watching Where a CNN Looks While It Learns",
+    "description": "Explainability study that fine-tunes ResNet-50 on 11 weather classes (93.4% test accuracy) while recording Grad-CAM, Grad-CAM++ and Score-CAM after every epoch. All CAM methods are implemented from scratch with forward/backward hooks, and the project measures how attention stabilizes and sharpens during training and where the model looks when it fails.",
+    "image": "/assets/weather_cam.gif",
+    "technologies": ["Explainable AI", "Grad-CAM", "Score-CAM", "ResNet-50", "PyTorch"],
+    "github": "https://github.com/iesusdavila/weather_cam_training_evolution",
+    "categories": ["computer-vision", "ai"]
+  },
+  {
+    "title": "Spanish to English GPT from Scratch",
+    "description": "Decoder-only Transformer (minGPT-style, 27M parameters) trained from scratch to translate Spanish into English as conditional language modeling. Uses a custom 16k byte-level BPE, cleaned OPUS-100 + Tatoeba data and length-bucketed batching that cuts padding from 71% to 1.7%, reaching 52.4 BLEU and 67.8 chrF on the test set. Includes a comparison against fine-tuned DistilGPT-2.",
+    "image": "/assets/spanish_english_gpt.png",
+    "technologies": ["Transformers", "GPT", "BPE Tokenizer", "PyTorch", "NLP"],
+    "github": "https://github.com/iesusdavila/spanish_to_english_gpt",
+    "categories": ["llm", "ai"]
+  },
+  {
+    "title": "CORTEX.LAB - Interactive Deep Learning Lab",
+    "description": "Browser-based interactive lab to build intuition for deep learning: every concept is a slider, every tensor a shape and every gradient an animation. Covers tensors, convolution kernels, activations, optimizers and step-by-step MLP training, plus architecture tours of CNNs, attention, CLIP, DINO and GANs, with OpenCV and augmentation labs. Pure HTML/CSS/JS with zero setup.",
+    "image": "/assets/cortex_lab.png",
+    "technologies": ["Deep Learning", "JavaScript", "HTML/CSS", "Interactive Visualization"],
+    "github": "https://github.com/iesusdavila/deep_learning",
+    "demo": "https://iesusdavila.github.io/deep_learning/",
+    "categories": ["computer-vision", "ai"]
+  },
+  {
     "title": "JobLens - AI-Powered CV Analysis & Enhancement Tool",
     "description": "Intelligent CV analysis platform leveraging LangChain, FAISS vector databases, and advanced language models to provide comprehensive resume feedback. Analyzes CV structure, content quality, and job compatibility to help job seekers optimize their resumes for better career opportunities.",
     "image": "/assets/joblens.png",
@@ -22,7 +63,7 @@
     "image": "/assets/multi_robot.png",
     "technologies": ["ROS2", "Multi-robot", "Nav2", "Python"],
     "github": "https://github.com/iesusdavila/multi_robot",
-    "demo": "https://youtu.be/fS6GwS7P4-A" ,
+    "demo": "https://youtu.be/fS6GwS7P4-A",
     "categories": ["nav2", "ros"]
   },
   {
