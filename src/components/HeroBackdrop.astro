@@ -1,0 +1,184 @@
+---
+// Decorative computer-vision backdrop: drifting detection boxes, feature maps
+// whose activations fade in and out, and a 3x3 kernel sliding over a grid.
+const boxes = [
+  { label: 'person 0.98', w: 150, h: 190, pos: 'right-[4%] top-6 md:right-[3%] md:top-[9%]', inner: 'origin-top-right max-md:scale-75', dx: -22, dy: 16, dur: 34 },
+  { label: 'robot 0.94', w: 170, h: 112, pos: 'hidden xl:block left-[1%] top-[62%]', inner: '', dx: 14, dy: -14, dur: 40 },
+  { label: 'car 0.91', w: 128, h: 84, pos: 'hidden md:block left-[44%] top-[5%]', inner: '', dx: 26, dy: 10, dur: 46 },
+  { label: '', w: 92, h: 92, pos: 'hidden xl:block left-[5%] top-[8%]', inner: '', dx: 14, dy: 18, dur: 38 },
+  { label: '', w: 110, h: 70, pos: 'hidden xl:block right-[1.5%] top-[74%]', inner: '', dx: -14, dy: -12, dur: 44 },
+];
+
+const seeded = (seed: number) => () => {
+  seed = (seed * 16807) % 2147483647;
+  return (seed - 1) / 2147483646;
+};
+
+const featureMap = (seed: number, size: number) => {
+  const next = seeded(seed);
+  return Array.from({ length: size * size }, (_, index) => ({
+    x: (index % size) * 17,
+    y: Math.floor(index / size) * 17,
+    from: (0.08 + next() * 0.5).toFixed(2),
+    to: (0.08 + next() * 0.7).toFixed(2),
+    dur: (5 + next() * 6).toFixed(1),
+    delay: (-next() * 8).toFixed(1),
+  }));
+};
+
+const maps = [
+  { cells: featureMap(7, 5), size: 5, pos: 'hidden md:block lg:hidden xl:block right-[14%] top-[58%] xl:left-[57.5%] xl:right-auto xl:top-[48%]', dx: 12, dy: -18, dur: 42 },
+  { cells: featureMap(23, 4), size: 4, pos: 'hidden xl:block left-[4%] top-[36%]', dx: -12, dy: 16, dur: 36 },
+  { cells: featureMap(41, 4), size: 4, pos: 'right-[6%] top-[215px] md:hidden', dx: -10, dy: 12, dur: 48 },
+];
+
+const grid = 6;
+const cell = 18;
+---
+
+<div class="cv-backdrop pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+  {
+    boxes.map((box) => (
+      <div
+        class:list={['cv-float absolute', box.pos]}
+        style={`--dx: ${box.dx}px; --dy: ${box.dy}px; --dur: ${box.dur}s;`}
+      >
+        <svg class={box.inner} width={box.w} height={box.h + 20} viewBox={`0 0 ${box.w} ${box.h + 20}`} fill="none">
+          {box.label && (
+            <text x="1" y="12" class="cv-label">
+              {box.label}
+            </text>
+          )}
+          <g transform="translate(0 20)" class="cv-stroke" stroke-width="1.5">
+            <rect x="0.75" y="0.75" width={box.w - 1.5} height={box.h - 1.5} stroke-dasharray="3 6" opacity="0.45" />
+            <path
+              stroke-width="2"
+              d={`M1 16V1h15 M${box.w - 16} 1h15v15 M${box.w - 1} ${box.h - 16}v15h-15 M16 ${box.h - 1}H1v-15`}
+            />
+          </g>
+        </svg>
+      </div>
+    ))
+  }
+
+  {
+    maps.map((map) => (
+      <div
+        class:list={['cv-float absolute', map.pos]}
+        style={`--dx: ${map.dx}px; --dy: ${map.dy}px; --dur: ${map.dur}s;`}
+      >
+        <svg width={map.size * 17 - 3} height={map.size * 17 - 3} viewBox={`0 0 ${map.size * 17 - 3} ${map.size * 17 - 3}`}>
+          {map.cells.map((c) => (
+            <rect
+              x={c.x}
+              y={c.y}
+              width="14"
+              height="14"
+              rx="2"
+              class="cv-cell"
+              style={`--from: ${c.from}; --to: ${c.to}; animation-duration: ${c.dur}s; animation-delay: ${c.delay}s;`}
+            />
+          ))}
+        </svg>
+      </div>
+    ))
+  }
+
+  <div class="cv-float absolute right-[4%] top-[52%] hidden xl:block" style="--dx: -12px; --dy: 12px; --dur: 50s;">
+    <svg width={grid * cell + 2} height={grid * cell + 2} viewBox={`-1 -1 ${grid * cell + 2} ${grid * cell + 2}`} fill="none">
+      <g class="cv-stroke" stroke-width="1" opacity="0.4">
+        {Array.from({ length: grid + 1 }, (_, i) => <path d={`M${i * cell} 0V${grid * cell} M0 ${i * cell}H${grid * cell}`} />)}
+      </g>
+      <rect class="cv-kernel" x="0" y="0" width={cell * 3} height={cell * 3} rx="2" stroke-width="2" />
+    </svg>
+  </div>
+</div>
+
+<style>
+  .cv-backdrop {
+    opacity: 0.5;
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent);
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+
+  :global(.dark) .cv-backdrop {
+    opacity: 0.5;
+  }
+
+  .cv-stroke {
+    stroke: rgb(var(--accent));
+  }
+
+  .cv-label {
+    fill: rgb(var(--accent));
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .cv-cell {
+    fill: rgb(var(--accent));
+    opacity: var(--from);
+    animation: cv-activate 6s ease-in-out infinite alternate;
+  }
+
+  .cv-kernel {
+    stroke: rgb(var(--accent));
+    fill: rgb(var(--accent) / 0.12);
+    animation: cv-convolve 28s ease-in-out infinite;
+  }
+
+  .cv-float {
+    animation: cv-drift var(--dur, 40s) ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  @keyframes cv-drift {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(var(--dx, 0), var(--dy, 0), 0);
+    }
+  }
+
+  @keyframes cv-activate {
+    from {
+      opacity: var(--from);
+    }
+    to {
+      opacity: var(--to);
+    }
+  }
+
+  @keyframes cv-convolve {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(54px, 0);
+    }
+    50% {
+      transform: translate(54px, 54px);
+    }
+    75% {
+      transform: translate(0, 54px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cv-backdrop {
+      opacity: 0.4;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cv-float,
+    .cv-cell,
+    .cv-kernel {
+      animation: none !important;
+    }
+  }
+</style>

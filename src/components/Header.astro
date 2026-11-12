@@ -29,10 +29,8 @@ const isCurrent = (href: string) => current === href;
               href={link.href}
               aria-current={isCurrent(link.href) ? 'page' : undefined}
               class:list={[
-                'rounded-md px-3 py-2 text-[0.9375rem] transition-colors hover:text-ink',
-                isCurrent(link.href)
-                  ? 'font-medium text-ink underline decoration-accent decoration-2 underline-offset-[10px]'
-                  : 'text-muted',
+                'nav-link rounded-md px-3 py-2 text-[0.9375rem] transition-colors hover:text-ink',
+                isCurrent(link.href) ? 'font-medium text-ink' : 'text-muted',
               ]}
             >
               {link.label}

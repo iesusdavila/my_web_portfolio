@@ -15,19 +15,22 @@ const { title, description, image, technologies, github, demo, eager = false } =
 const isVideo = demo ? /youtu\.?be/.test(demo) : false;
 ---
 
-<article class="panel flex h-full flex-col overflow-hidden transition-colors hover:border-line-strong">
-  <img
-    src={image}
-    alt=""
-    width="1280"
-    height="800"
-    loading={eager ? 'eager' : 'lazy'}
-    decoding="async"
-    class="aspect-[16/10] w-full border-b border-line bg-sunken object-cover dark:brightness-90"
-  />
+<article class="panel card-hover group flex h-full flex-col overflow-hidden">
+  <div class="relative overflow-hidden border-b border-line bg-sunken">
+    <img
+      src={image}
+      alt=""
+      width="1280"
+      height="800"
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      class="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] dark:brightness-90"
+    />
+    <span class="focus-corners" aria-hidden="true"></span>
+  </div>
 
   <div class="flex flex-1 flex-col p-5">
-    <h3 class="text-xl leading-snug">{title}</h3>
+    <h3 class="text-xl leading-snug transition-colors duration-300 group-hover:text-accent">{title}</h3>
 
     <div class="mt-2" data-expandable>
       <p class="line-clamp-4 text-[0.9375rem] leading-relaxed text-muted" data-expandable-text>{description}</p>
