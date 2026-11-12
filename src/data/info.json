@@ -40,7 +40,7 @@
   "experience": [
     {
       "position": "Digital & Insights Professional",
-      "company": "Cerveceria Nacional.",
+      "company": "Cervecería Nacional",
       "years": "August 2026 - Present",
       "responsibilities": [
         "Development computer vision models using embeddings models for product recognition.",
@@ -92,19 +92,47 @@
   "skillCategories": [
     {
       "name": "AI & Machine Learning",
-      "skills": ["Deep Learning", "Computer Vision", "TensorFlow", "PyTorch", "OpenCV", "Large Language Models", "Llama.cpp", "Ollama"]
+      "skills": [
+        "Deep Learning",
+        "Computer Vision",
+        "TensorFlow",
+        "PyTorch",
+        "OpenCV",
+        "Large Language Models",
+        "Llama.cpp",
+        "Ollama"
+      ]
     },
     {
       "name": "Robotics",
-      "skills": ["ROS/ROS2", "ROS2 Control", "Navigation2", "MoveIt2", "Control Systems", "Gazebo"]
+      "skills": [
+        "ROS/ROS2",
+        "ROS2 Control",
+        "Navigation2",
+        "MoveIt2",
+        "Control Systems",
+        "Gazebo"
+      ]
     },
     {
       "name": "Programming",
-      "skills": ["Python", "C++", "JavaScript", "Git", "Docker", "Linux"]
+      "skills": [
+        "Python",
+        "C++",
+        "JavaScript",
+        "Git",
+        "Docker",
+        "Linux"
+      ]
     },
     {
       "name": "Hardware & Electronics",
-      "skills": ["Jetson Orin", "Raspberry Pi", "Sensor Integration", "Embedded Systems"]
+      "skills": [
+        "Jetson Orin",
+        "Raspberry Pi",
+        "Sensor Integration",
+        "Embedded Systems"
+      ]
     }
   ],
   "certifications": [

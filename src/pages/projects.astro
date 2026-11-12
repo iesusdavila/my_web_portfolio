@@ -1,102 +1,87 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import projects from '../data/projects.json';
+
+const filters = [
+  { key: 'all', label: 'All' },
+  { key: 'computer-vision', label: 'Computer vision' },
+  { key: 'llm', label: 'LLMs' },
+  { key: 'agents', label: 'AI agents' },
+  { key: 'ros', label: 'ROS / ROS 2' },
+].filter((filter) => filter.key === 'all' || projects.some((project) => project.categories.includes(filter.key)));
 ---
 
-<Layout title="Projects | Mechatronics Engineer Portfolio">
-  <div class="container mx-auto px-4 py-12">
-    <header class="text-center mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
-      <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
-        A collection of robotics, AI, and mechatronics projects showcasing my expertise and innovation.
-      </p>
-    </header>
+<Layout title="Projects | Iesus Davila">
+  <PageHeader
+    title="Projects"
+    description="Computer vision, language models, agents and robotics projects, each with its code and results."
+  />
 
-    <!-- Filter Options -->
-    <div class="flex flex-wrap justify-center gap-3 mb-12">
-      <button class="filter-btn active px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="all">
-        All
-      </button>
-      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="agents">
-        AI Agents
-      </button>
-      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="ai">
-        AI & Machine Learning
-      </button>
-      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="computer-vision">
-        Computer Vision
-      </button>
-      <button class="filter-btn px-4 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 transition-colors" data-filter="ros">
-        ROS/ROS2
-      </button>
+  <div class="page pb-16 sm:pb-24">
+    <div class="mb-6 flex flex-col gap-3 sm:mb-8 sm:flex-row sm:items-center sm:justify-between">
+      <div class="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0" role="group" aria-label="Filter projects by topic">
+        {
+          filters.map((filter) => (
+            <button
+              type="button"
+              data-filter={filter.key}
+              aria-pressed={filter.key === 'all' ? 'true' : 'false'}
+              class="inline-flex min-h-[2.75rem] shrink-0 items-center rounded-md border border-line-strong bg-surface px-3.5 text-[0.9375rem] text-ink transition-colors hover:border-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper"
+            >
+              {filter.label}
+            </button>
+          ))
+        }
+      </div>
+      <p id="project-count" class="shrink-0 text-[0.9375rem] text-muted" aria-live="polite">{projects.length} projects</p>
     </div>
 
-    <!-- Projects Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((project) => (
-        <div class="project-card" data-categories={project.categories.join(',')}>
-          <ProjectCard
-            title={project.title}
-            description={project.description}
-            image={project.image}
-            technologies={project.technologies}
-            github={project.github}
-            demo={project.demo}
-          />
-        </div>
-      ))}
-    </div>
+    <ul id="project-grid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((project, index) => (
+          <li data-categories={project.categories.join(',')}>
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              technologies={project.technologies}
+              github={project.github}
+              demo={project.demo}
+              eager={index < 3}
+            />
+          </li>
+        ))
+      }
+    </ul>
 
-    <!-- Empty state (hidden by default) -->
-    <div id="no-results" class="hidden text-center py-16">
-      <div class="text-5xl mb-4">🤖</div>
-      <h3 class="text-2xl font-bold mb-2">No projects found</h3>
-      <p class="text-neutral-600 dark:text-neutral-400">
-        No projects match your current filter. Try selecting a different category.
-      </p>
-    </div>
+    <p id="no-results" hidden class="panel p-6 text-muted">No projects in this topic yet. Choose another filter.</p>
   </div>
 </Layout>
 
 <script>
-  // Filter functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    const noResults = document.getElementById('no-results');
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const cards = document.querySelectorAll<HTMLElement>('#project-grid > li');
+  const count = document.getElementById('project-count');
+  const empty = document.getElementById('no-results');
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-cyan-600', 'dark:bg-cyan-700', 'text-white'));
-        
-        // Add active class to clicked button
-        button.classList.add('active', 'bg-cyan-600', 'dark:bg-cyan-700', 'text-white');
-        
-        const filter = button.getAttribute('data-filter');
-        
-        let visibleCount = 0;
-        
-        // Filter projects
-        projectCards.forEach(card => {
-          const categories = card.getAttribute('data-categories').split(',');
-          
-          if (filter === 'all' || categories.includes(filter)) {
-            card.style.display = 'block';
-            visibleCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-        
-        // Show/hide empty state
-        if (visibleCount === 0) {
-          noResults.classList.remove('hidden');
-        } else {
-          noResults.classList.add('hidden');
-        }
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter ?? 'all';
+      buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+
+      let visible = 0;
+      cards.forEach((card) => {
+        const categories = (card.dataset.categories ?? '').split(',');
+        const show = filter === 'all' || categories.includes(filter);
+        card.hidden = !show;
+        if (show) visible += 1;
       });
+
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'project' : 'projects'}`;
+      if (empty) empty.hidden = visible > 0;
+      window.dispatchEvent(new Event('resize'));
     });
   });
 </script>

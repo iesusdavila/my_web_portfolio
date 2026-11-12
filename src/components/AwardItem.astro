@@ -1,0 +1,31 @@
+---
+import Icon from './Icon.astro';
+
+export interface Props {
+  title: string;
+  organization: string;
+  date: string;
+  description: string;
+  certificate?: string;
+}
+
+const { title, organization, date, description, certificate } = Astro.props;
+---
+
+<article class="panel grid gap-x-8 gap-y-2 p-5 sm:p-6 md:grid-cols-[9rem_minmax(0,1fr)]">
+  <p class="text-[0.9375rem] text-muted md:pt-1">{date}</p>
+  <div>
+    <h3 class="text-xl leading-snug">{title}</h3>
+    <p class="mt-1 font-medium">{organization}</p>
+    <p class="mt-2 max-w-[46rem] text-[0.9375rem] leading-relaxed text-muted">{description}</p>
+    {
+      certificate && (
+        <a href={encodeURI(certificate)} target="_blank" rel="noopener noreferrer" class="text-link mt-2 min-h-[2.75rem] text-[0.9375rem]">
+          <Icon name="file-text" size={16} />
+          View certificate
+          <span class="sr-only">for {title}</span>
+        </a>
+      )
+    }
+  </div>
+</article>

@@ -1,64 +1,84 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import SkillBadge from '../components/SkillBadge.astro';
 import HighlightSection from '../components/HighlightSection.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import PaperCard from '../components/PaperCard.astro';
-import AwardCard from '../components/AwardCard.astro';
+import PaperItem from '../components/PaperItem.astro';
+import AwardItem from '../components/AwardItem.astro';
 import ContactForm from '../components/ContactForm.astro';
+import ContactDetails from '../components/ContactDetails.astro';
 
-// Load data
 import personalInfo from '../data/info.json';
 import skills from '../data/skills.json';
 import projects from '../data/projects.json';
 import papers from '../data/papers.json';
 import awards from '../data/awards.json';
 
-// Get top projects, papers and awards
 const topProjects = projects.slice(0, 3);
 const topPapers = papers.slice(0, 3);
 const topAwards = awards.slice(0, 3);
+
+const currentJob = personalInfo.experience[0];
+const degree = personalInfo.education[0];
+const bestPaper = awards.find((award) => /best paper/i.test(award.title));
+
+const facts = [
+  { label: 'Current role', value: currentJob.position, detail: currentJob.company },
+  { label: 'Education', value: degree.degree, detail: `${degree.institution}, ${degree.year}` },
+  {
+    label: 'Research',
+    value: `${papers.length} peer-reviewed papers`,
+    detail: bestPaper ? `Best paper award, IEEE ETCM ${bestPaper.date.split(' ').pop()}` : undefined,
+  },
+];
+
+const skillGroups = [
+  { key: 'ai', label: 'Computer vision and deep learning' },
+  { key: 'llm', label: 'LLMs and agents' },
+  { key: 'robotics', label: 'Robotics' },
+  { key: 'software', label: 'Programming' },
+  { key: 'hardware', label: 'Hardware' },
+]
+  .map((group) => ({ ...group, items: skills.filter((skill) => skill.category === group.key) }))
+  .filter((group) => group.items.length > 0);
 ---
 
-<Layout title={`${personalInfo.name} | Mechatronics Engineer`}>
-  <div class="container mx-auto px-4">
-    <!-- Hero Section -->
-    <Hero 
-      name={personalInfo.name}
-      title={personalInfo.title}
-      bio={personalInfo.bio}
-      image={personalInfo.profileImage}
-      socialLinks={personalInfo.socialLinks}
-    />
+<Layout title={`${personalInfo.name} | AI and Robotics Engineer`}>
+  <Hero
+    name={personalInfo.name}
+    title={personalInfo.title}
+    bio={personalInfo.bio}
+    image={personalInfo.profileImage}
+    socialLinks={personalInfo.socialLinks}
+    facts={facts}
+  />
 
-    <!-- Skills Section -->
-    <section class="py-12 md:py-20">
-      <div class="w-full max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">My Skills & Technologies</h2>
-        
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {skills.map((skill) => (
-            <SkillBadge
-              name={skill.name}
-              icon={skill.icon}
-              category={skill.category}
-              proficiency={skill.proficiency}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+  <HighlightSection title="Skills and technologies">
+    <dl class="panel divide-y divide-line">
+      {
+        skillGroups.map((group) => (
+          <div class="grid gap-x-8 gap-y-2 px-5 py-4 sm:grid-cols-[16rem_minmax(0,1fr)] sm:items-center">
+            <dt class="font-medium">{group.label}</dt>
+            <dd>
+              <ul class="flex flex-wrap gap-1.5">
+                {group.items.map((skill) => <li class="chip">{skill.name}</li>)}
+              </ul>
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </HighlightSection>
 
-    <!-- Highlights Sections -->
-    <HighlightSection
-      title="Featured Projects"
-      description="Some of my best work in robotics and AI systems"
-      linkText="View All Projects"
-      linkUrl="/projects"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {topProjects.map((project) => (
+  <HighlightSection
+    title="Featured projects"
+    description="Recent work in vision-language models, vision transformers and explainability."
+    linkText="View all projects"
+    linkUrl="/projects"
+  >
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        topProjects.map((project) => (
           <ProjectCard
             title={project.title}
             description={project.description}
@@ -67,60 +87,59 @@ const topAwards = awards.slice(0, 3);
             github={project.github}
             demo={project.demo}
           />
-        ))}
-      </div>
-    </HighlightSection>
+        ))
+      }
+    </div>
+  </HighlightSection>
 
-    <HighlightSection
-      title="Recent Publications"
-      description="My research contributions in robotics and artificial intelligence"
-      linkText="View All Papers"
-      linkUrl="/papers"
-      bgClass="bg-neutral-100 dark:bg-neutral-800/50"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {topPapers.map((paper) => (
-          <PaperCard
-            title={paper.title}
-            journal={paper.journal}
-            date={paper.date}
-            authors={paper.authors}
-            doi={paper.doi}
-            pdf={paper.pdf}
-          />
-        ))}
-      </div>
-    </HighlightSection>
+  <HighlightSection
+    title="Publications"
+    description="Peer-reviewed research in robotics and artificial intelligence."
+    linkText="View all papers"
+    linkUrl="/papers"
+  >
+    <div class="space-y-4">
+      {
+        topPapers.map((paper) => (
+          <PaperItem title={paper.title} journal={paper.journal} date={paper.date} authors={paper.authors} doi={paper.doi} />
+        ))
+      }
+    </div>
+  </HighlightSection>
 
-    <HighlightSection
-      title="Awards & Recognition"
-      description="Honors received for my work and contributions"
-      linkText="View All Awards"
-      linkUrl="/awards"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {topAwards.map((award) => (
-          <AwardCard
+  <HighlightSection
+    title="Awards and recognition"
+    description="Reviewer invitations, certifications and awards."
+    linkText="View all awards"
+    linkUrl="/awards"
+  >
+    <div class="space-y-4">
+      {
+        topAwards.map((award) => (
+          <AwardItem
             title={award.title}
             organization={award.organization}
             date={award.date}
             description={award.description}
             certificate={award.certificate}
           />
-        ))}
-      </div>
-    </HighlightSection>
+        ))
+      }
+    </div>
+  </HighlightSection>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-16 md:py-24 bg-neutral-100 dark:bg-neutral-800/50 rounded-3xl my-16">
-      <div class="w-full max-w-3xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold mb-3 text-center">Get In Touch</h2>
-        <p class="text-neutral-600 dark:text-neutral-400 text-center mb-10 max-w-xl mx-auto">
-          Have a project idea or research proposal? Feel free to reach out to discuss how we can work together.
+  <section id="contact" class="section">
+    <div class="page grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16">
+      <div>
+        <h2 class="section-title">Get in touch</h2>
+        <p class="mb-6 mt-2 max-w-[28rem] text-muted">
+          Have a project idea or a research proposal? Write to me and we can talk about working together.
         </p>
-        
+        <ContactDetails />
+      </div>
+      <div class="panel p-5 sm:p-7">
         <ContactForm />
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </Layout>

@@ -1,0 +1,40 @@
+---
+import Icon from './Icon.astro';
+
+export interface Props {
+  title: string;
+  journal: string;
+  date: string;
+  authors: string[];
+  doi?: string;
+  me?: string;
+}
+
+const { title, journal, date, authors, doi, me = 'Iesus Davila' } = Astro.props;
+---
+
+<article class="panel grid gap-x-8 gap-y-2 p-5 sm:p-6 md:grid-cols-[9rem_minmax(0,1fr)]">
+  <p class="text-[0.9375rem] text-muted md:pt-1">{date}</p>
+  <div>
+    <h3 class="text-xl leading-snug">{title.trim()}</h3>
+    <p class="mt-1 font-medium">{journal}</p>
+    <p class="mt-2 text-[0.9375rem] leading-relaxed text-muted">
+      {
+        authors.map((author, index) => (
+          <Fragment>
+            {author === me ? <span class="font-medium text-ink">{author}</span> : author}
+            {index < authors.length - 1 ? ', ' : ''}
+          </Fragment>
+        ))
+      }
+    </p>
+    {
+      doi && (
+        <a href={doi} target="_blank" rel="noopener noreferrer" class="text-link mt-2 min-h-[2.75rem] text-[0.9375rem]">
+          <Icon name="external-link" size={16} />
+          Read the paper
+        </a>
+      )
+    }
+  </div>
+</article>

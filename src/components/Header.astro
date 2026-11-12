@@ -1,82 +1,112 @@
 ---
 import DarkModeToggle from './DarkModeToggle.astro';
+import Icon from './Icon.astro';
+
+const links = [
+  { href: '/projects', label: 'Projects' },
+  { href: '/papers', label: 'Papers' },
+  { href: '/awards', label: 'Awards' },
+  { href: '/cv', label: 'CV' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => current === href;
 ---
 
-<header class="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md shadow-sm dark:shadow-neutral-800/10">
-  <div class="container mx-auto px-4 py-3">
-    <div class="flex justify-between items-center">
-      <!-- Logo -->
-      <a href="/" class="flex items-center">
-        <img src="/assets/logo.svg" alt="Logo" class="h-10 w-10 mr-3" />
-        <span class="font-bold text-xl">Iesus Davila</span>
-      </a>
-      
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-1">
-        <a href="/" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home</a>
-        <a href="/projects" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Projects</a>
-        <a href="/papers" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Papers</a>
-        <a href="/awards" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Awards</a>
-        <a href="/cv" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">CV</a>
-        <a href="/contact" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Contact</a>
-        <DarkModeToggle />
+<header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-sm">
+  <div class="page flex h-16 items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-3 rounded-md" aria-label="Iesus Davila, home">
+      <img src="/assets/logo.svg" alt="" width="32" height="32" class="h-8 w-8" />
+      <span class="font-display text-lg font-semibold">Iesus Davila</span>
+    </a>
+
+    <div class="flex items-center gap-2">
+      <nav aria-label="Main" class="mr-2 hidden items-center gap-1 md:flex">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              aria-current={isCurrent(link.href) ? 'page' : undefined}
+              class:list={[
+                'rounded-md px-3 py-2 text-[0.9375rem] transition-colors hover:text-ink',
+                isCurrent(link.href)
+                  ? 'font-medium text-ink underline decoration-accent decoration-2 underline-offset-[10px]'
+                  : 'text-muted',
+              ]}
+            >
+              {link.label}
+            </a>
+          ))
+        }
       </nav>
-      
-      <!-- Mobile Menu Button -->
-      <div class="flex items-center md:hidden">
-        <DarkModeToggle />
-        <button 
-          id="mobile-menu-button" 
-          class="ml-2 p-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-          aria-label="Toggle Menu"
-        >
-          <i data-feather="menu" class="w-6 h-6"></i>
-        </button>
-      </div>
+
+      <DarkModeToggle />
+
+      <button
+        type="button"
+        id="menu-button"
+        class="icon-btn md:hidden"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span data-menu-open class="inline-flex"><Icon name="menu" size={20} /></span>
+        <span data-menu-close class="hidden"><Icon name="x" size={20} /></span>
+      </button>
     </div>
-    
-    <!-- Mobile Navigation (Hidden by default) -->
-    <nav id="mobile-menu" class="hidden pt-4 pb-2 md:hidden">
-      <div class="flex flex-col space-y-2">
-        <a href="/" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home</a>
-        <a href="/projects" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Projects</a>
-        <a href="/papers" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Papers</a>
-        <a href="/awards" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Awards</a>
-        <a href="/cv" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">CV</a>
-        <a href="/contact" class="px-4 py-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Contact</a>
-      </div>
-    </nav>
   </div>
+
+  <nav id="mobile-menu" aria-label="Main" class="hidden border-t border-line bg-paper md:hidden">
+    <ul class="page divide-y divide-line py-1">
+      <li>
+        <a
+          href="/"
+          aria-current={current === '/' ? 'page' : undefined}
+          class:list={['flex min-h-[3rem] items-center justify-between text-base', current === '/' ? 'font-medium text-ink' : 'text-muted']}
+        >
+          Home
+        </a>
+      </li>
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              aria-current={isCurrent(link.href) ? 'page' : undefined}
+              class:list={[
+                'flex min-h-[3rem] items-center justify-between text-base',
+                isCurrent(link.href) ? 'font-medium text-ink' : 'text-muted',
+              ]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </header>
 
 <script>
-  // Mobile menu toggle functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      
-      // Toggle between menu and x icon
-      const icon = mobileMenuButton.querySelector('i');
-      if (icon.getAttribute('data-feather') === 'menu') {
-        icon.setAttribute('data-feather', 'x');
-      } else {
-        icon.setAttribute('data-feather', 'menu');
-      }
-      feather.replace();
+  const button = document.getElementById('menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  if (button && menu) {
+    const setOpen = (open: boolean) => {
+      menu.classList.toggle('hidden', !open);
+      button.setAttribute('aria-expanded', String(open));
+      button.querySelector('[data-menu-open]')?.classList.toggle('hidden', open);
+      button.querySelector('[data-menu-open]')?.classList.toggle('inline-flex', !open);
+      button.querySelector('[data-menu-close]')?.classList.toggle('hidden', !open);
+      button.querySelector('[data-menu-close]')?.classList.toggle('inline-flex', open);
+    };
+
+    button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
     });
-    
-    // Close mobile menu when clicking on a link
-    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        const icon = mobileMenuButton.querySelector('i');
-        icon.setAttribute('data-feather', 'menu');
-        feather.replace();
-      });
-    });
-  });
+    window.matchMedia('(min-width: 768px)').addEventListener('change', () => setOpen(false));
+  }
 </script>

@@ -26,19 +26,19 @@
   {
     "name": "Agents - LLMs",
     "icon": "database",
-    "category": "hardware",
+    "category": "llm",
     "proficiency": 100
   },
   {
     "name": "LangGraph",
     "icon": "database",
-    "category": "hardware",
+    "category": "llm",
     "proficiency": 100
   },
   {
     "name": "LangChain",
     "icon": "database",
-    "category": "hardware",
+    "category": "llm",
     "proficiency": 100
   },
   {

@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 export interface Props {
   title: string;
   description: string;
@@ -6,60 +8,90 @@ export interface Props {
   technologies: string[];
   github?: string;
   demo?: string;
+  eager?: boolean;
 }
 
-const { title, description, image, technologies, github, demo } = Astro.props;
+const { title, description, image, technologies, github, demo, eager = false } = Astro.props;
+const isVideo = demo ? /youtu\.?be/.test(demo) : false;
 ---
 
-<div class="group bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl dark:shadow-neutral-900/20 dark:hover:shadow-cyan-900/20 transition duration-300 h-full flex flex-col transform hover:-translate-y-1">
-  <!-- Project Image -->
-  <div class="relative h-48 w-full bg-neutral-200 dark:bg-neutral-700 overflow-hidden">
-    <img 
-      src={image} 
-      alt={title} 
-      class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-      <div class="flex gap-2">
-        {github && (
-          <a 
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-white bg-neutral-800/80 hover:bg-neutral-800 p-2 rounded-full transition"
-            aria-label="GitHub Repository"
-          >
-            <i data-feather="github" class="w-5 h-5"></i>
-          </a>
-        )}
-        
-        {demo && (
-          <a 
-            href={demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-white bg-cyan-600/80 hover:bg-cyan-600 p-2 rounded-full transition"
-            aria-label="Live Demo"
-          >
-            <i data-feather="external-link" class="w-5 h-5"></i>
-          </a>
-        )}
-      </div>
+<article class="panel flex h-full flex-col overflow-hidden transition-colors hover:border-line-strong">
+  <img
+    src={image}
+    alt=""
+    width="1280"
+    height="800"
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    class="aspect-[16/10] w-full border-b border-line bg-sunken object-cover dark:brightness-90"
+  />
+
+  <div class="flex flex-1 flex-col p-5">
+    <h3 class="text-xl leading-snug">{title}</h3>
+
+    <div class="mt-2" data-expandable>
+      <p class="line-clamp-4 text-[0.9375rem] leading-relaxed text-muted" data-expandable-text>{description}</p>
+      <button
+        type="button"
+        hidden
+        aria-expanded="false"
+        class="mt-1 inline-flex min-h-[2rem] items-center text-sm font-medium text-ink underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+        data-expandable-toggle
+      >
+        Show more
+      </button>
     </div>
+
+    <ul class="mt-4 flex flex-wrap gap-1.5">
+      {technologies.map((tech) => <li class="chip">{tech}</li>)}
+    </ul>
+
+    {
+      (github || demo) && (
+        <div class="mt-auto flex flex-wrap gap-x-5 gap-y-1 pt-5">
+          {github && (
+            <a href={github} target="_blank" rel="noopener noreferrer" class="text-link min-h-[2.75rem] text-[0.9375rem]">
+              <Icon name="github" size={16} />
+              Code
+              <span class="sr-only">for {title}</span>
+            </a>
+          )}
+          {demo && (
+            <a href={demo} target="_blank" rel="noopener noreferrer" class="text-link min-h-[2.75rem] text-[0.9375rem]">
+              <Icon name={isVideo ? 'play-circle' : 'external-link'} size={16} />
+              {isVideo ? 'Video' : 'Live demo'}
+              <span class="sr-only">of {title}</span>
+            </a>
+          )}
+        </div>
+      )
+    }
   </div>
-  
-  <!-- Project Info -->
-  <div class="p-6 flex-grow flex flex-col">
-    <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition">{title}</h3>
-    <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4 flex-grow">{description}</p>
-    
-    <!-- Technologies -->
-    <div class="flex flex-wrap gap-2 mt-auto">
-      {technologies.map((tech) => (
-        <span class="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-full text-xs">
-          {tech}
-        </span>
-      ))}
-    </div>
-  </div>
-</div>
+</article>
+
+<script>
+  const setup = () => {
+    document.querySelectorAll<HTMLElement>('[data-expandable]').forEach((block) => {
+      const text = block.querySelector<HTMLElement>('[data-expandable-text]');
+      const toggle = block.querySelector<HTMLButtonElement>('[data-expandable-toggle]');
+      if (!text || !toggle) return;
+
+      if (toggle.getAttribute('aria-expanded') !== 'true') {
+        toggle.hidden = text.scrollHeight <= text.clientHeight + 1;
+      }
+
+      if (toggle.dataset.bound) return;
+      toggle.dataset.bound = 'true';
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        text.classList.toggle('line-clamp-4', expanded);
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        toggle.textContent = expanded ? 'Show more' : 'Show less';
+      });
+    });
+  };
+
+  setup();
+  window.addEventListener('resize', setup);
+  document.fonts?.ready.then(setup);
+</script>
