@@ -1,0 +1,31 @@
+---
+import personalInfo from '../data/info.json';
+import Icon from './Icon.astro';
+---
+
+<ul class="space-y-3 text-[0.9375rem]">
+  <li class="flex items-center gap-3">
+    <Icon name="mail" class="text-muted" />
+    <a href={`mailto:${personalInfo.email}`} class="text-link break-all">{personalInfo.email}</a>
+  </li>
+  <li class="flex items-center gap-3">
+    <Icon name="phone" class="text-muted" />
+    <a href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`} class="text-link">{personalInfo.phone}</a>
+  </li>
+  <li class="flex items-center gap-3">
+    <Icon name="map-pin" class="text-muted" />
+    <span>{personalInfo.location}</span>
+  </li>
+</ul>
+
+<ul class="mt-6 flex flex-wrap gap-2">
+  {
+    personalInfo.socialLinks.map((link) => (
+      <li>
+        <a href={link.url} target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label={link.name}>
+          <Icon name={link.icon} />
+        </a>
+      </li>
+    ))
+  }
+</ul>

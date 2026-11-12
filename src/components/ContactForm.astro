@@ -1,72 +1,83 @@
-<form id="contact-form" class="space-y-6" action="https://getform.io/f/avrwqxva" method="POST">
-  <div>
-    <label for="name" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
-      Your Name
-    </label>
-    <input 
-      type="text" 
-      id="name" 
-      name="name" 
-      required
-      class="w-full px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-600"
-    />
+---
+import personalInfo from '../data/info.json';
+---
+
+<form id="contact-form" class="space-y-5" action="https://getform.io/f/avrwqxva" method="POST" data-email={personalInfo.email}>
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="name" class="field-label">Name</label>
+      <input type="text" id="name" name="name" autocomplete="name" required class="field" />
+    </div>
+    <div>
+      <label for="email" class="field-label">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" required class="field" />
+    </div>
   </div>
-  
+
   <div>
-    <label for="email" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
-      Your Email
-    </label>
-    <input 
-      type="email" 
-      id="email" 
-      name="email" 
-      required
-      class="w-full px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-600"
-    />
+    <label for="subject" class="field-label">Subject</label>
+    <input type="text" id="subject" name="subject" required class="field" />
   </div>
-  
+
   <div>
-    <label for="subject" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
-      Subject
-    </label>
-    <input 
-      type="text" 
-      id="subject" 
-      name="subject" 
-      required
-      class="w-full px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-600"
-    />
+    <label for="message" class="field-label">Message</label>
+    <textarea id="message" name="message" rows="5" required class="field"></textarea>
   </div>
-  
-  <div>
-    <label for="message" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
-      Message
-    </label>
-    <textarea 
-      id="message" 
-      name="message" 
-      rows="5" 
-      required
-      class="w-full px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-600"
-    ></textarea>
-  </div>
-  
-  <div id="form-status" class="hidden p-4 rounded-lg"></div>
-  
-  <div>
-    <button 
-      type="submit"
-      class="w-full px-6 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 text-white transition-colors flex items-center justify-center"
-    >
-      <span id="button-text">Send Message</span>
-      <span id="button-loading" class="hidden ml-2">
-        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-      </span>
-    </button>
+
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+    <button type="submit" class="btn-primary w-full sm:w-auto">Send message</button>
+    <p id="form-status" role="status" aria-live="polite" class="form-status text-[0.9375rem]"></p>
   </div>
 </form>
 
-<script src="/scripts/form.js" is:inline></script>
+<style>
+  .form-status[data-state='success'] {
+    color: rgb(var(--accent));
+  }
+
+  .form-status[data-state='error'] {
+    color: rgb(190 48 48);
+  }
+
+  :global(.dark) .form-status[data-state='error'] {
+    color: rgb(248 140 140);
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status');
+
+  if (form && status) {
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!button) return;
+
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      status.textContent = '';
+      status.removeAttribute('data-state');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (!response.ok) throw new Error(`Request failed with status ${response.status}`);
+
+        form.reset();
+        status.dataset.state = 'success';
+        status.textContent = 'Message sent. I will reply as soon as I can.';
+      } catch (error) {
+        status.dataset.state = 'error';
+        status.textContent = `The message was not sent. Try again, or write to ${form.dataset.email}.`;
+      } finally {
+        button.disabled = false;
+        button.textContent = 'Send message';
+      }
+    });
+  }
+</script>
