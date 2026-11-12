@@ -57,11 +57,11 @@ const skillGroups = [
     <dl class="panel divide-y divide-line">
       {
         skillGroups.map((group) => (
-          <div class="grid gap-x-8 gap-y-2 px-5 py-4 sm:grid-cols-[16rem_minmax(0,1fr)] sm:items-center">
+          <div class="grid gap-x-8 gap-y-2 px-5 py-4 transition-colors duration-300 hover:bg-sunken/60 sm:grid-cols-[16rem_minmax(0,1fr)] sm:items-center">
             <dt class="font-medium">{group.label}</dt>
             <dd>
               <ul class="flex flex-wrap gap-1.5">
-                {group.items.map((skill) => <li class="chip">{skill.name}</li>)}
+                {group.items.map((skill) => <li class="chip chip-hover">{skill.name}</li>)}
               </ul>
             </dd>
           </div>

@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import HeroBackdrop from './HeroBackdrop.astro';
 
 export interface Props {
   name: string;
@@ -14,14 +15,16 @@ const { name, title, bio, image, socialLinks, facts } = Astro.props;
 const roles = title.split('|').map((part) => part.trim()).filter(Boolean);
 ---
 
-<section class="page pb-14 pt-10 sm:pb-20 sm:pt-16">
+<div class="relative isolate">
+<HeroBackdrop />
+<section class="page relative pb-14 pt-10 sm:pb-20 sm:pt-16">
   <div class="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_17rem] md:gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
     <div class="order-2 md:order-1">
-      <h1 class="text-[2.5rem] leading-[1.05] sm:text-[3.25rem] lg:text-[3.75rem]">{name}</h1>
-      <p class="mt-3 font-display text-xl font-semibold text-accent sm:text-2xl">{roles.join(', ')}</p>
-      <p class="mt-5 max-w-[38rem] text-[1.0625rem] leading-relaxed text-muted sm:text-lg">{bio}</p>
+      <h1 class="rise text-[2.5rem] leading-[1.05] sm:text-[3.25rem] lg:text-[3.75rem]">{name}</h1>
+      <p class="rise mt-3 font-display text-xl font-semibold text-accent sm:text-2xl" style="--rise-delay: 80ms">{roles.join(', ')}</p>
+      <p style="--rise-delay: 160ms" class="rise mt-5 max-w-[38rem] text-[1.0625rem] leading-relaxed text-muted sm:text-lg">{bio}</p>
 
-      <div class="mt-8 flex flex-wrap items-center gap-3">
+      <div class="rise mt-8 flex flex-wrap items-center gap-3" style="--rise-delay: 240ms">
         <a href="/contact" class="btn-primary">
           <Icon name="mail" size={16} />
           Contact me
@@ -32,7 +35,7 @@ const roles = title.split('|').map((part) => part.trim()).filter(Boolean);
         </a>
       </div>
 
-      <ul class="mt-6 flex flex-wrap gap-2">
+      <ul class="rise mt-6 flex flex-wrap gap-2" style="--rise-delay: 320ms">
         {
           socialLinks.map((link) => (
             <li>
@@ -45,23 +48,25 @@ const roles = title.split('|').map((part) => part.trim()).filter(Boolean);
       </ul>
     </div>
 
-    <div class="order-1 md:order-2">
-      <div class="w-36 overflow-hidden rounded-lg border border-line bg-sunken sm:w-44 md:w-full">
+    <div class="rise order-1 md:order-2" style="--rise-delay: 120ms">
+      <div class="portrait group relative w-36 overflow-hidden rounded-lg border border-line bg-sunken transition-colors duration-300 hover:border-accent sm:w-44 md:w-full">
         <img
           src={image}
           alt={`Portrait of ${name}`}
           width="960"
           height="1280"
-          class="aspect-square w-full object-cover object-[50%_18%] md:aspect-[4/5]"
+          class="aspect-square w-full object-cover object-[50%_18%] transition-transform duration-700 ease-out group-hover:scale-[1.03] md:aspect-[4/5]"
         />
+        <span class="focus-corners" aria-hidden="true"></span>
+        <span class="focus-tag hidden md:block" aria-hidden="true">person 0.99</span>
       </div>
     </div>
   </div>
 
-  <dl class="panel mt-10 grid divide-y divide-line sm:mt-14 md:grid-cols-3 md:divide-x md:divide-y-0">
+  <dl style="--rise-delay: 400ms" class="rise panel relative mt-10 grid overflow-hidden divide-y divide-line sm:mt-14 md:grid-cols-3 md:divide-x md:divide-y-0">
     {
       facts.map((fact) => (
-        <div class="px-5 py-4">
+        <div class="px-5 py-4 transition-colors duration-300 hover:bg-sunken">
           <dt class="text-sm text-muted">{fact.label}</dt>
           <dd class="mt-1 font-medium leading-snug">{fact.value}</dd>
           {fact.detail && <dd class="mt-0.5 text-[0.9375rem] text-muted">{fact.detail}</dd>}
@@ -70,3 +75,4 @@ const roles = title.split('|').map((part) => part.trim()).filter(Boolean);
     }
   </dl>
 </section>
+</div>
